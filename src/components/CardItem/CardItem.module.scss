@@ -1,12 +1,17 @@
 .main {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  //align-items: center;
   border-radius: 12px;
   border: 1px solid #E0E4F0;
   background: #FFF;
   padding: 20px;
   max-width: 240px;
+
+  .image_block {
+    display: flex;
+    justify-content: center;
+  }
 
   .colors {
     display: flex;
@@ -49,6 +54,27 @@
     font-size: 16px;
     font-weight: 500;
     line-height: 22px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
+  }
+
+  .reviews {
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin: 2px;
+    }
+
+    .star_disabled * {
+      fill: var(--gray);
+    }
+
+    .review {
+      color: var(--purple-gray);
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 20px;
+      margin-left: 8px;
+    }
   }
 }
