@@ -77,4 +77,27 @@
       margin-left: 8px;
     }
   }
+
+  .buy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .price {
+      position: relative;
+
+      &_old {
+        position: absolute;
+        top: -100%;
+        left: 0;
+        margin-right: -50%;
+      }
+
+
+    }
+
+    .discount {
+
+    }
+  }
 }
