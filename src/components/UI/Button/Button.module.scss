@@ -1,0 +1,25 @@
+.button {
+  padding: 7px;
+  background-color: var(--white);
+  border-radius: 8px;
+  transition: ease .2s;
+  width: 36px;
+  height: 36px;
+
+  &:hover svg {
+    opacity: 0.85;
+  }
+
+  &:disabled svg * {
+    fill: var(--gray);
+  }
+
+  &_like {
+    background: var(--light-pink);
+  }
+
+  &_compare {
+    background: var(--light-orange);
+  }
+
+}
