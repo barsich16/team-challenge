@@ -11,10 +11,10 @@ export const TabContainer = ({ items }) => {
 
 	return (
 		<div>
-			<div className={css.alert}>
+			<div className={css.container}>
 				{items.map((item, i) => (
 					<button
-						className={i === Number(active) ? css.active : ''}
+						className={i === Number(active) ? css.active : css.btn}
 						onClick={openTab}
 						data-index={i}
 						key={i}

@@ -1,11 +1,12 @@
 .active {
 	margin: 8px;
-	padding: 12px 16px;
-	border-radius: 4px;
-	background-color: gray;
-	color: white;
+	border-bottom: 2px solid black;
+	width: 200px;
 }
-.alert {
+.btn {
+	width: 200px;
+}
+.container {
 	display: flex;
 	gap: 50px;
 	padding: 10px;
