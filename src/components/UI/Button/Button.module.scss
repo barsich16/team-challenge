@@ -1,25 +1,42 @@
 .button {
-  padding: 7px;
-  background-color: var(--white);
-  border-radius: 8px;
-  transition: ease .2s;
-  width: 36px;
-  height: 36px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
 
-  &:hover svg {
-    opacity: 0.85;
+  svg {
+    width: 21px;
+    height: 21px;
+    margin-right: 10px;
+
+    * {
+      fill: var(--white);
+    }
   }
 
-  &:disabled svg * {
-    fill: var(--gray);
+  &_contained {
+    background-color: var(--bright-purple);
   }
 
-  &_like {
-    background: var(--light-pink);
+  &_outlained {
+    border: 2px solid var(--bright-purple);
+    background: #FFF;
+    color: var(--bright-purple);
   }
 
-  &_compare {
-    background: var(--light-orange);
+  &_small {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 16px 32px;
+  }
+
+  &_middle {
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
   }
 
 }

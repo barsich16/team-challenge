@@ -1,34 +1,21 @@
-import {ReactComponent as Like} from '../../../assets/icons/heart.svg';
-import {ReactComponent as Compare} from '../../../assets/icons/compare.svg';
-import styles from './Button.module.scss'
-import {useState} from "react";
-import cs from 'classnames';
+import styles from './Button.module.scss';
+import cs from "classnames";
 
-export const Button = ({type, onClick, className}) => {
-    const types = {
-        like: <Like/>,
-        compare: <Compare/>
-    }
+//variant: text, contained, outlined
 
-    const [isClicked, setIsClicked] = useState(false);
+export const Button = ({textSize = 'small', icon, variant = 'contained', children, onClick, className, ...props}) => {
 
     const handleClick = () => {
         if (onClick) {
             onClick();
         }
-
-        setIsClicked(prevState => !prevState);
     }
 
-    const defaultStyles = cs(styles.button, {[styles[`button_${type}`]]: isClicked});
+    const defaultStyles = cs(styles.button, styles[`button_${textSize}`], styles[`button_${variant}`]);
 
     const buttonStyles = className
-        ? cs(className, defaultStyles)
+        ? cs(defaultStyles, className)
         : defaultStyles;
 
-    return (
-        <button className={buttonStyles} onClick={handleClick}>
-            {types[type]}
-        </button>
-    );
+    return <button className={buttonStyles}>{icon}{children}</button>;
 };

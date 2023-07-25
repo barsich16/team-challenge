@@ -6,7 +6,7 @@ import src from './iphone.png';
 import cs from 'classnames';
 import {useState} from 'react';
 import {ToolTip} from '../UI/Tooltip/Tooltip';
-import {Button} from "../UI/Button/Button";
+import {Icon} from "../UI/Icon/Icon";
 
 export const CardItem = ({data}) => {
     const [activeItem, setActiveItem] = useState(data[0]);
@@ -16,10 +16,10 @@ export const CardItem = ({data}) => {
             <div className={styles.main}>
                 <div className={styles.content}>
                     <div className={styles.btn_group}>
-                        <Button type='like'/>
-                        <Button type='compare'/>
+                        <Icon type='like'/>
+                        <Icon type='compare'/>
                     </div>
-                    
+
                     <div className={styles.image_block}>
                         <img src={src} alt=''/>
                     </div>

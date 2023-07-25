@@ -1,9 +1,6 @@
 .header {
   width: 100%;
-  height: 60px;
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid green;
+  height: 70px;
   z-index: 2;
   background-color: #fff;
 
@@ -11,9 +8,22 @@
     position: relative;
     z-index: 200;
   }
+
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 0;
+
+    .logo {
+      width: 126px;
+      height: 60px;
+      background-color: #d9d9d9;
+    }
+  }
 }
 
-.wrapper {
+.overlay {
   //visibility: hidden;
   position: fixed;
   top: 0;
