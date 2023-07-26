@@ -2,6 +2,7 @@ import styles from './Header.module.scss';
 import {useState} from 'react';
 import {Button} from "../UI/Button/Button";
 import {ReactComponent as Catalogue} from '../../assets/icons/catalogue.svg';
+import {SearchBar} from "../UI/SearchBar/SearchBar";
 
 
 export const Header = () => {
@@ -23,6 +24,7 @@ export const Header = () => {
                     <div className={styles.inner}>
                         <div className={styles.logo}></div>
                         <Button textSize='middle' icon={<Catalogue/>}>Catalogue</Button>
+                        <SearchBar/>
                         <HeaderItem isActive showOverlay={showOverlay}>
                             Burger
                         </HeaderItem>
