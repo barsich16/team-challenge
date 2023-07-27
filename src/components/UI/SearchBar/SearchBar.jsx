@@ -1,21 +1,18 @@
 import styles from './SearchBar.module.scss';
 import {ReactComponent as SearchIcon} from "../../../assets/icons/search.svg";
 import {useState} from "react";
-import {useDebounce} from "../../../hooks/useDebounce";
+import {SearchInput} from "./SearchInput/SearchInput";
+import {SearchResultsList} from "./SearchResultsList/SearchResultsList";
 
 export const SearchBar = () => {
-    const [searchTerm, setSearchTerm] = useState("");
+    const [results, setResults] = useState([]);
 
-    const debouncedSearchTerm = useDebounce(searchTerm, 500);
+    console.log(results);
 
     return <div className={styles.main}>
-        <input
-            type="text"
-            placeholder="Search.."
-            className={styles.input}
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-        />
+        <SearchInput setResults={setResults}/>
         <SearchIcon className={styles.icon}/>
+        {/*<SearchResultsList results={results}/>*/}
+        {results && results.length > 0 && <SearchResultsList results={results}/>}
     </div>;
 };
