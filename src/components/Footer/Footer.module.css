@@ -1,0 +1,90 @@
+.container {
+	display: flex;
+	position: relative;
+	background-color: #141416;
+	width: 1440px;
+	height: 431px;
+}
+.logo {
+	position: absolute;
+	top: 100px;
+	left: 150px;
+	background-color: #d9d9d9;
+	width: 68px;
+	height: 44px;
+}
+.slogan {
+	position: absolute;
+	top: 150px;
+	left: 150px;
+	color: #6f7780;
+	width: 200px;
+	height: 64px;
+	font-weight: 600px;
+	font-size: 24px;
+	line-height: 1.33;
+}
+.localisation {
+	position: absolute;
+	top: 230px;
+	left: 150px;
+	width: 128px;
+	height: 58px;
+	background-color: #6b6c6d;
+	border-radius: 20px;
+	opacity: 0.5;
+}
+.icons {
+	display: flex;
+	justify-content: space-between;
+	position: absolute;
+	top: 300px;
+	left: 150px;
+	width: 112px;
+	height: 24px;
+}
+.text {
+	position: absolute;
+	top: 390px;
+	left: 150px;
+	width: 282px;
+	height: 20px;
+	color: #6f7780;
+}
+.menu {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	position: absolute;
+	top: 150px;
+	left: 492px;
+	width: 62px;
+	height: 26px;
+	color: #6f7780;
+}
+.menu2 {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	position: absolute;
+	top: 150px;
+	left: 684px;
+	width: 62px;
+	height: 26px;
+	color: #6f7780;
+}
+.bottom {
+	display: flex;
+	gap: 30px;
+	position: absolute;
+	top: 400px;
+	left: 930px;
+}
+.bottom_text {
+	width: 110px;
+	height: 20px;
+	color: #6f7780;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.5;
+}
