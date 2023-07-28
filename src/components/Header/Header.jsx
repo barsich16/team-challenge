@@ -3,6 +3,7 @@ import {useState} from 'react';
 import {Button} from "../UI/Button/Button";
 import {ReactComponent as Catalogue} from '../../assets/icons/catalogue.svg';
 import {SearchBar} from "../UI/SearchBar/SearchBar";
+import {LanguageSwitcher} from "../UI/LanguageSwitcher/LanguageSwitcher";
 
 
 export const Header = () => {
@@ -25,6 +26,7 @@ export const Header = () => {
                         <div className={styles.logo}></div>
                         <Button textSize='middle' icon={<Catalogue/>}>Catalogue</Button>
                         <SearchBar/>
+                        <LanguageSwitcher/>
                         <HeaderItem isActive showOverlay={showOverlay}>
                             Burger
                         </HeaderItem>

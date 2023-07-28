@@ -1,0 +1,66 @@
+@keyframes moveToUA {
+  0% {
+    left: 0;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes moveToEN {
+  0% {
+    background-color: #007bff;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.languageSwitcher {
+  display: flex;
+  position: relative;
+
+  &.en {
+    &::before {
+      
+    }
+  }
+
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    display: block;
+    background-color: green;
+    z-index: 1;
+    animation: moveToUA 0.5s ease-in-out forwards;
+  }
+
+
+  .langButton {
+    display: block;
+    //background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    font-size: 16px;
+    color: #333;
+    z-index: 2;
+    transition: background-color 0.3s ease;
+
+    &.active {
+      //background-color: green;
+
+      &.en {
+        //animation: moveToUA 0.5s ease-in-out forwards;
+      }
+
+      &.ua {
+        //animation: moveToUA 0.5s ease-in-out forwards;
+      }
+    }
+  }
+}
