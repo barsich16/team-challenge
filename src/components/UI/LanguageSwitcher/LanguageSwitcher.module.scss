@@ -1,66 +1,75 @@
-@keyframes moveToUA {
-  0% {
-    left: 0;
-  }
-  100% {
-    right: 0;
-  }
-}
-
-@keyframes moveToEN {
-  0% {
-    background-color: #007bff;
-  }
-  100% {
-    background-color: transparent;
-  }
-}
-
-.languageSwitcher {
+.toggle {
   display: flex;
-  position: relative;
+  border-radius: 12px;
+  padding: 8px;
 
-  &.en {
-    &::before {
-      
-    }
+  &_light {
+    border: 1px solid var(--bright-purple);
+    //TODO: переписати стилі тем тут
   }
 
+  &_dark {
+    border: 1px solid #885aff;
+  }
 
-  &::before {
-    content: '';
+  .btn_wrapper {
+    position: relative;
+    z-index: 1;
+  }
+
+  .activeBg {
     position: absolute;
     top: 0;
-    bottom: 0;
+    left: 0;
     width: 50%;
-    display: block;
-    background-color: green;
-    z-index: 1;
-    animation: moveToUA 0.5s ease-in-out forwards;
+    height: 100%;
+    z-index: -1;
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+
+    &_light {
+      background: #DACCFF;
+    }
+
+    &_dark {
+      background: #4421A0;
+    }
   }
 
+  .en {
+    transform: translateX(0%);
+  }
 
-  .langButton {
-    display: block;
-    //background-color: transparent;
+  .ua {
+    transform: translateX(100%);
+  }
+
+  &_button {
+    background-color: transparent;
     border: none;
     cursor: pointer;
-    padding: 8px;
-    font-size: 16px;
-    color: #333;
+    padding: 0 8px;
     z-index: 2;
-    transition: background-color 0.3s ease;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
 
-    &.active {
-      //background-color: green;
+    &_light {
+      color: var(--bright-purple);
 
-      &.en {
-        //animation: moveToUA 0.5s ease-in-out forwards;
+      &_active {
+        color: #fff;
       }
+    }
 
-      &.ua {
-        //animation: moveToUA 0.5s ease-in-out forwards;
+    &_dark {
+      color: #885aff;
+
+      &.active {
+        color: #a27eff;
       }
     }
   }
+
+
 }
