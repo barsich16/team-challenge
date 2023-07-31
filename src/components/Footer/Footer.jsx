@@ -1,21 +1,26 @@
 import css from './Footer.module.css';
-import { FiInstagram } from 'react-icons/fi';
-import { LuTwitter } from 'react-icons/lu';
-import { FaFacebookF } from 'react-icons/fa';
+import { ReactComponent as Facebook } from '../../assets/icons/facebook.svg';
+import { ReactComponent as Instagram } from '../../assets/icons/instagram.svg';
+import { ReactComponent as Twitter } from '../../assets/icons/twitter.svg';
+import { ReactComponent as Ua } from '../../assets/icons/UA.svg';
+import { ReactComponent as En } from '../../assets/icons/EN.svg';
 
 export const Footer = () => {
 	return (
-		<div className={css.container}>
-			<div>
+		<div className={css.footer}>
+			<div className={css.footer_left}>
 				<div className={css.logo}></div>
-				<div className={css.slogan}>Motto, company slogan.</div>
-				<div className={css.localisation}></div>
-				<div className={css.icons}>
-					<FiInstagram fill='white' size={20} />
-					<LuTwitter fill='white' size={20} />
-					<FaFacebookF fill='white' size={20} />
+				<div className={css.slogan}>Simplify Your Tech Journey</div>
+				<div className={css.localisation}>
+					<En fill='white' size={26} />
+					<Ua fill='white' size={26} />
 				</div>
-				<p className={css.text}>NAME 2022. All Rights Reserved.</p>
+				<div className={css.icons}>
+					<Instagram fill='white' size={24} />
+					<Twitter fill='white' size={24} />
+					<Facebook fill='white' size={24} />
+				</div>
+				<p className={css.text}>TECH EASE 2023. All Rights Reserved.</p>
 			</div>
 			<div className={css.menu}>
 				<p>menu1</p>
