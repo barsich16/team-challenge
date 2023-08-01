@@ -4,11 +4,13 @@
 
 * {
   font-family: Inter, sans-serif;
+  font-style: normal;
 }
 
 .wrapper {
   margin: 0 auto;
   max-width: 1270px;
-  padding: 0 15px;
+  padding-left: 15px;
+  padding-right: 15px;
   height: 100%;
 }
