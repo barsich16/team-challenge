@@ -17,5 +17,5 @@ export const Button = ({textSize = 'small', icon, variant = 'contained', childre
         ? cs(defaultStyles, className)
         : defaultStyles;
 
-    return <button className={buttonStyles}>{icon}{children}</button>;
+    return <button onClick={handleClick} className={buttonStyles}>{icon}{children}</button>;
 };

@@ -1,0 +1,136 @@
+.general {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+
+  .memory {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    &_btn {
+      background-color: #f9fafe;
+      color: var(--black);
+      padding: 8px 16px;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 24px;
+
+      &_active {
+        border: 1px solid var(--bright-purple);
+      }
+    }
+
+  }
+
+  //Todo: create Price Component
+
+  .price {
+    //position: relative;
+
+    &_value {
+      position: relative;
+
+      span {
+        color: var(--black);
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 44px;
+      }
+
+      .price_discount {
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        margin-right: -50%;
+        margin-left: 10px;
+        transform: translateY(-50%);
+
+        &_value {
+          padding: 4px 8px;
+          background: var(--exotic-pink);
+          color: var(--white);
+          border-radius: 8px;
+          font-size: 12px;
+          font-weight: 300;
+          line-height: 18px;
+          min-width: 48px;
+          text-align: center;
+        }
+      }
+
+      //position: relative;
+    }
+
+    &_old {
+      //position: absolute;
+      //top: 0;
+      //margin-top: -20px;
+      //left: 0;
+      //margin-right: -50%;
+      color: var(--purple-gray);
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 24px;
+      text-decoration: line-through;
+    }
+
+
+  }
+
+  .cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+
+    &_btn {
+      padding: 6px 24px;
+      color: var(--white, #FFF);
+      font-size: 16px;
+      font-weight: 600;
+
+      svg {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  }
+
+  .gallery {
+    width: 519px;
+  }
+
+  .data {
+    width: 659px;
+  }
+
+  .block {
+    width: 100%;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--light-gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &_down {
+      border-radius: 12px 12px 0 0;
+      //border-bottom: none;
+    }
+
+    &_up {
+      border-radius: 0 0 12px 12px;
+      border-top: none;
+    }
+  }
+
+  .divider {
+    height: 1px;
+    width: 100%;
+    background-color: var(--light-gray);
+    //margin: 20px 0;
+  }
+}
