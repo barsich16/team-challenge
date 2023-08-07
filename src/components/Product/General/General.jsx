@@ -7,6 +7,8 @@ import { Button } from '../../UI/Button/Button';
 import { ToolTip } from '../../UI/Tooltip/Tooltip';
 import { Icon } from '../../UI/Icon/Icon';
 import { ReactComponent as Cart } from '../../../assets/icons/cart.svg';
+import { ReactComponent as Credit } from '../../../assets/icons/credit.svg';
+import src from '../../../assets/icons/mono.png';
 import { useState } from 'react';
 
 export const General = () => {
@@ -49,21 +51,11 @@ export const General = () => {
 		},
 	];
 
-	const [imgData, setImgData] = useState('');
-
-	async function fetchImages() {
-		const response = await fetch('http://example.com/movies.json');
-		const movies = await response.json();
-		console.log(movies);
-	}
-
 	return (
 		<section className={styles.general}>
-			<div className={styles.gallery}>
-				Gallery
-				<img src={imgData} alt='' />
-			</div>
+			<div className={styles.gallery}>Gallery</div>
 			<div className={styles.data}>
+				{/*Main Block*/}
 				<div className={cs(styles.block, styles.block_down)}>
 					<ColorCircles data={data} activeItemId={1} />
 					<div className={styles.memory}>
@@ -97,7 +89,7 @@ export const General = () => {
 						</Button>
 					</div>
 				</div>
-				<div className={cs(styles.block, styles.block_up)}>
+				<div className={cs(styles.block, styles.block_up, styles.block_gap)}>
 					<div className={styles.price}>
 						<div className={styles.price_old}>75 999</div>
 						<div className={styles.price_value}>
@@ -112,18 +104,59 @@ export const General = () => {
 					<div className={styles.cart}>
 						<Icon type='like' />
 						<Icon type='compare' />
-						<Button className={styles.cart_btn} icon={<Cart />}>
+						<Button className={styles.button} icon={<Cart />}>
 							Add to Cart
 						</Button>
 					</div>
 				</div>
 
 				{/*Credit Block*/}
-				<div className={styles.block}></div>
+				<div className={cs(styles.block, styles.block_gap)}>
+					<div className={styles.credit_info}>
+						<span className={styles.credit_info_title}>On credit from</span>
+						<span className={styles.credit_info_value}>8 499 / mon</span>
+					</div>
+					<div className={styles.credit_banks}>
+						<div className={styles.credit_banks_item}>
+							<img src={src} alt='' />
+							<span>4</span>
+						</div>
+						<div className={styles.credit_banks_item}>
+							<img src={src} alt='' />
+							<span>4</span>
+						</div>
+						<div className={styles.credit_banks_item}>
+							<img src={src} alt='' />
+							<span>4</span>
+						</div>
+						<div className={styles.credit_banks_item}>
+							<img src={src} alt='' />
+							<span>4</span>
+						</div>
+					</div>
+					<Button
+						className={styles.credit_btn}
+						textSize='middle'
+						variant='outlined'
+						icon={<Credit />}
+					>
+						Buy on Credit
+					</Button>
+				</div>
 
 				{/*Delivery Block*/}
+				<div className={cs(styles.block, styles.block_down)}>
+					<div className={styles.delivery}></div>
+					<Icon type='arrow-right' />
+				</div>
+				<div
+					className={cs(styles.block, styles.block_up, styles.block_gap)}
+				></div>
+				{/*Payment and guarantee Block*/}
 				<div className={cs(styles.block, styles.block_down)}></div>
-				<div className={cs(styles.block, styles.block_up)}></div>
+				<div
+					className={cs(styles.block, styles.block_up, styles.block_gap)}
+				></div>
 				<CardRow />
 			</div>
 		</section>

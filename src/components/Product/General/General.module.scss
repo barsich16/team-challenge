@@ -80,23 +80,23 @@
 
   }
 
+  .button {
+    padding: 6px 24px;
+    color: var(--white, #FFF);
+    font-size: 16px;
+    font-weight: 600;
+
+    svg {
+      width: 36px;
+      height: 36px;
+    }
+  }
+
   .cart {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 24px;
-
-    &_btn {
-      padding: 6px 24px;
-      color: var(--white, #FFF);
-      font-size: 16px;
-      font-weight: 600;
-
-      svg {
-        width: 36px;
-        height: 36px;
-      }
-    }
   }
 
   .gallery {
@@ -125,12 +125,54 @@
       border-radius: 0 0 12px 12px;
       border-top: none;
     }
+
+    &_gap {
+      margin-bottom: 20px;
+    }
   }
 
-  .divider {
-    height: 1px;
-    width: 100%;
-    background-color: var(--light-gray);
-    //margin: 20px 0;
+  .credit {
+    &_info {
+      display: flex;
+      flex-direction: column;
+
+      &_title {
+        color: var(--purple-gray, #514761);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+      }
+
+      &_value {
+        color: var(--black, #1E1D21);
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 28px;
+      }
+    }
+
+    &_banks {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+
+      &_item {
+        display: flex;
+        align-items: center;
+        padding: 14px 9px;
+        border-radius: 12px;
+        border: 1px solid var(--light-gray);
+      }
+    }
+
+    &_btn {
+      font-size: 16px;
+      line-height: 24px;
+
+      svg * {
+        fill: var(--bright-purple);
+      }
+    }
   }
 }
