@@ -1,7 +1,7 @@
 .general {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  //align-items: center;
   gap: 60px;
 
   .memory {
@@ -17,6 +17,7 @@
       font-size: 18px;
       font-weight: 500;
       line-height: 24px;
+      border: 1px solid #f9fafe;
 
       &_active {
         border: 1px solid var(--bright-purple);
@@ -174,5 +175,53 @@
         fill: var(--bright-purple);
       }
     }
+  }
+
+  .del_item {
+    display: flex;
+    //align-items: center;
+    gap: 12px;
+
+    p {
+      color: var(--purple-gray);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+
+      b {
+        font-weight: 600;
+        color: var(--black);
+      }
+    }
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .date {
+    color: var(--black, #1E1D21);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px; /* 157.143% */
+  }
+
+  .cost {
+    text-align: right;
+    color: var(--black, #1E1D21);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px; /* 157.143% */
+
+    .free {
+      color: var(--bright-pink);
+    }
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
   }
 }
