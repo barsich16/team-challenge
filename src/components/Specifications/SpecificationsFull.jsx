@@ -1,111 +1,110 @@
-import css from './Specifications.module.css';
+import css from './Specifications.module.scss';
 
 export const SpecificationsFull = ({ data }) => {
 	return (
-		<div>
-			<div className={css.table}>
-				<h2 className={css.title}>Specifications</h2>
-				<div className={css.wrapper}>
-					<tr>
-						<td className={css.topic}>Main</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Series</td>
-						<td>{data.series}</td>
-					</tr>
-					<tr>
-						<td>Graduation year</td>
-						<td>{data.year}</td>
-					</tr>
-					<tr>
-						<td>Color</td>
-						<td>{data.color}</td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-					</tr>
+		<div className={css.table}>
+			<ul className={css.table_wrapper}>
+				<li>
+					<p className={css.table_topic}>Main</p>
+					<p></p>
+				</li>
+				<li>
+					<p className={css.table_feature}>Series</p>
+					<p className={css.table_data}>{data.series}</p>
+				</li>
+				<li>
+					<p className={css.table_feature}>Graduation year</p>
+					<p className={css.table_data}>{data.year}</p>
+				</li>
+				<li>
+					<p className={css.table_feature}>Color</p>
+					<p className={css.table_data}>{data.color}</p>
+				</li>
+				<li>
+					<p></p>
+					<p></p>
+				</li>
 
-					<tr>
-						<td className={css.topic}>Operating system</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Operating system</td>
-						<td>{data.system}</td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-					</tr>
+				<li>
+					<p className={css.table_topic}>Operating system</p>
+					<p></p>
+				</li>
+				<li>
+					<p className={css.table_feature}>Operating system</p>
+					<p className={css.table_data}>{data.system}</p>
+				</li>
+				<li>
+					<p></p>
+					<p></p>
+				</li>
 
-					<tr>
-						<td className={css.topic}>Memory</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Internal memory</td>
-						<td>{data.memory}</td>
-					</tr>
-					<tr>
-						<td>RAM</td>
-						<td>{data.ram}</td>
-					</tr>
-					<tr>
-						<td>The maximum volume of the supported memory card</td>
-						<td>{data.volume}</td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td className={css.topic}>Display</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Screen diagonal</td>
-						<td>{data.diagonal}</td>
-					</tr>
-					<tr>
-						<td>Display resolution</td>
-						<td>{data.resolution}</td>
-					</tr>
-					<tr>
-						<td>Matrix type</td>
-						<td>{data.matrixType}</td>
-					</tr>
-					<tr>
-						<td>Screen refresh rate</td>
-						<td>{data.screenRefreshRate}</td>
-					</tr>
-					<tr>
-						<td>Screen material</td>
-						<td>{data.screenMaterial}</td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td className={css.topic}>Processor</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Processor</td>
-						<td>{data.processor}</td>
-					</tr>
-					<tr>
-						<td>Number of cores</td>
-						<td>{data.numberOfCores}</td>
-					</tr>
-					<tr>
-						<td>Apple Series</td>
-						<td>{data.appleSeries}</td>
-					</tr>
-				</div>
-			</div>
+				<li>
+					<p className={css.table_topic}>Memory</p>
+					<p></p>
+				</li>
+				<li>
+					<p className={css.table_feature}>Internal memory</p>
+					<p className={css.table_data}>{data.memory}</p>
+				</li>
+				<li>
+					<p className={css.table_feature}>RAM</p>
+					<p className={css.table_data}>{data.ram}</p>
+				</li>
+				<li>
+					<p className={css.table_feature}>
+						The maximum volume of the supported memory card
+					</p>
+					<p className={css.table_data}>{data.volume}</p>
+				</li>
+				<li>
+					<p></p>
+					<p></p>
+				</li>
+				<li>
+					<p className={css.table_topic}>Display</p>
+					<p></p>
+				</li>
+				<li>
+					<p className={css.table_feature}>Screen diagonal</p>
+					<p className={css.table_data}>{data.diagonal}</p>
+				</li>
+				<li>
+					<p className={css.table_feature}>Display resolution</p>
+					<p className={css.table_data}>{data.resolution}</p>
+				</li>
+				<li>
+					<p className={css.table_feature}>Matrix type</p>
+					<p className={css.table_data}>{data.matrixType}</p>
+				</li>
+				<li>
+					<p className={css.table_feature}>Screen refresh rate</p>
+					<p className={css.table_data}>{data.screenRefreshRate}</p>
+				</li>
+				<li>
+					<p className={css.table_feature}>Screen material</p>
+					<p className={css.table_data}>{data.screenMaterial}</p>
+				</li>
+				<li>
+					<p></p>
+					<p></p>
+				</li>
+				<li>
+					<p className={css.table_topic}>Processor</p>
+					<p></p>
+				</li>
+				<li>
+					<p className={css.table_feature}>Processor</p>
+					<p className={css.table_data}>{data.processor}</p>
+				</li>
+				<li>
+					<p className={css.table_feature}>Number of cores</p>
+					<p className={css.table_data}>{data.numberOfCores}</p>
+				</li>
+				<li>
+					<p className={css.table_feature}>Apple Series</p>
+					<p className={css.table_data}>{data.appleSeries}</p>
+				</li>
+			</ul>
 		</div>
 	);
 };
