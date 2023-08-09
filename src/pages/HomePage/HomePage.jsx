@@ -18,7 +18,7 @@ export const HomePage = () => {
 			Home Page
 			{/* <SpecificationsFull data={data} /> */}
 			{fullMode ? (
-				<SpecificationsFull data={data} />
+				<SpecificationsFull specifications={specifications} />
 			) : (
 				<SpecificationsMain data={data} />
 			)}
@@ -59,3 +59,36 @@ const data = {
 	screenMaterial: 'Ceramic Shield',
 	appleSeries: 'Apple Ax Series',
 };
+
+export const specifications = [
+	{
+		label: 'Main',
+		data: [
+			{
+				name: 'Series',
+				value: 'Iphone 14 Pro',
+			},
+			{
+				name: 'Graduation Year',
+				value: 2022,
+			},
+			{
+				name: 'Color',
+				value: 'Deep Purple',
+			},
+		],
+	},
+	{
+		label: 'Memory',
+		data: [
+			{
+				name: 'Internal Memory',
+				value: '512 GB',
+			},
+			{
+				name: 'RAM',
+				value: '6 GB',
+			},
+		],
+	},
+];
