@@ -1,7 +1,7 @@
 .general {
   display: flex;
   justify-content: space-between;
-  //align-items: center;
+  //align-items.js: center;
   gap: 60px;
 
   .memory {
@@ -102,6 +102,7 @@
 
   .gallery {
     width: 519px;
+    height: 436px;
   }
 
   .data {
@@ -179,7 +180,7 @@
 
   .del_item {
     display: flex;
-    //align-items: center;
+    //align-items.js: center;
     gap: 12px;
 
     p {

@@ -19,10 +19,20 @@
     background-color: var(--bright-purple);
   }
 
-  &_outlined {
+  &_outlained {
     border: 2px solid var(--bright-purple);
     background: #FFF;
     color: var(--bright-purple);
+
+    svg {
+      width: 21px;
+      height: 21px;
+      margin-right: 10px;
+
+      * {
+        fill: var(--bright-purple);
+      }
+    }
   }
 
   &_small {

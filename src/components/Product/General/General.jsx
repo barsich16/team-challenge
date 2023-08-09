@@ -11,6 +11,7 @@ import {ReactComponent as Credit} from '../../../assets/icons/credit.svg';
 import src from '../../../assets/icons/mono.png';
 import {useState} from 'react';
 import {GallerySlider} from "../Sliders/GallerySlider/GallerySlider";
+import {TestSlider} from "../Sliders/TestSlider/TestSlider";
 
 export const General = () => {
     const data = [
@@ -60,7 +61,10 @@ export const General = () => {
 
     return (
         <section className={styles.general}>
-            <div className={styles.gallery}></div>
+            <div className={styles.gallery}>
+                <TestSlider/>
+            </div>
+            {/*       Right Part       */}
             <div className={styles.data}>
                 {/*Main Block*/}
                 <div className={cs(styles.block, styles.block_down)}>

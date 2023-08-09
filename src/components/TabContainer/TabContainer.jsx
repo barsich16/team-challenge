@@ -44,7 +44,7 @@ export const Tabs = () => {
                 />
             })}
 
-            {/*{items[active] && <TabWrapper content={items[active].content}/>}*/}
+            {/*{items.js[active] && <TabWrapper content={items.js[active].content}/>}*/}
         </div>
     );
 };

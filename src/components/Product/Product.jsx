@@ -3,8 +3,6 @@ import styles from './Product.module.scss';
 import {Breadcrumbs} from "../UI/Breadcrumbs/Breadcrumbs";
 import {ReactComponent as Star} from "../../assets/icons/star.svg";
 import {Tabs} from "../TabContainer/TabContainer";
-import {GallerySlider} from "./Sliders/GallerySlider/GallerySlider";
-import {TestSlider} from "./Sliders/TestSlider/TestSlider";
 
 export const Product = () => {
     const product = {
@@ -28,7 +26,8 @@ export const Product = () => {
             </div>
         </div>
         {/*<GallerySlider/>*/}
-        <TestSlider/>
+        {/*<TestSlider/>*/}
+        {/*<NewTestSlider/>*/}
         <Tabs/>
     </div>;
 };

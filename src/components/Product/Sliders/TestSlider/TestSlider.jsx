@@ -1,54 +1,49 @@
-import React, {useRef, useState} from 'react';
+import {useState} from 'react';
 // Import Swiper React components
-import {Swiper, SwiperSlide} from 'swiper/react';
-
+import {Swiper, SwiperSlide, useSwiper} from 'swiper/react';
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/free-mode';
-import 'swiper/css/navigation';
-import 'swiper/css/thumbs';
-import {FreeMode, Navigation, Pagination, Thumbs} from 'swiper/modules';
+import 'swiper/scss';
+import 'swiper/scss/free-mode';
+import 'swiper/scss/navigation';
+import 'swiper/scss/thumbs';
 
 import styles from './TestSlider.module.scss';
+import {Navigation, Thumbs} from 'swiper/modules';
+import {SlideButtons} from "./Arrows";
+import {imagesURLArray as data} from '../../../../data/items';
 
 export function TestSlider() {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
     return (
-        <>
-            <div className={styles.main}>
-                <Swiper
-                    onSwiper={setThumbsSwiper}
-                    slidesPerView="4"
-                    mousewheel={true}
-                    spaceBetween={10}
-                    direction="vertical"
-                    // pagination={{clickable: true}}
-                    scrollbar={{draggable: true}}
-                    // freeMode={true}
-                    // watchSlidesProgress={true}
-                    modules={[FreeMode, Navigation, Thumbs]}
-                    className={styles.swiperVertical}
-                    wrapperClass={styles.wrapper}
-                >
-                    <SwiperSlide>
-                        <img src="https://swiperjs.com/demos/images/nature-1.jpg"/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src="https://swiperjs.com/demos/images/nature-2.jpg"/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src="https://swiperjs.com/demos/images/nature-3.jpg"/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src="https://swiperjs.com/demos/images/nature-4.jpg"/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src="https://swiperjs.com/demos/images/nature-5.jpg"/>
-                    </SwiperSlide>
-                </Swiper></div>
-
-        </>
+        <div className={styles.main}>
+            <Swiper
+                thumbs={{swiper: thumbsSwiper}}
+                modules={[Thumbs]}
+                className={styles.swiperMain}
+            >
+                {data.map((item, index) => (
+                    <SwiperSlide key={index} className={styles.slide}>
+                        <img src={item}/>
+                    </SwiperSlide>))
+                }
+            </Swiper>
+            <Swiper
+                onSwiper={setThumbsSwiper}
+                spaceBetween={12}
+                slidesPerView={5}
+                watchSlidesProgress={true}
+                modules={[Navigation, Thumbs]}
+                className={styles.swiperSide}
+                direction={'vertical'}
+            >
+                {data.map((item, index) => (
+                    <SwiperSlide key={index} className={styles.slide2}>
+                        <img src={item}/>
+                    </SwiperSlide>))
+                }
+                <SlideButtons/>
+            </Swiper>
+        </div>
     );
 }
