@@ -20,7 +20,10 @@ export const HomePage = () => {
 			{fullMode ? (
 				<SpecificationsFull specifications={specifications} />
 			) : (
-				<SpecificationsMain data={data} />
+				<>
+					<SpecificationsMain data={data} />
+					<SpecificationsMain data={data} type={'short'} />
+				</>
 			)}
 			<Button
 				variant='outlained'
@@ -39,26 +42,73 @@ export const HomePage = () => {
 	);
 };
 
-const data = {
-	system: 'iOS 16',
-	series: 'iPhone 14 Pro',
-	year: '2022',
-	diagonal: '6,7"',
-	processor: 'Apple A16 Bionic',
-	numberOfCores: 6,
-	memory: '512 GB',
-	ram: '6 GB',
-	mainCam: '48 MP, 12 MP, 12 MP',
-	frontCam: '12 MP',
-	battery: '3200 MAg',
-	color: 'Deep Purple',
-	volume: 'None',
-	resolution: '2796x1290',
-	matrixType: 'OLED (Super Retina XDR)',
-	screenRefreshRate: '120 Hz',
-	screenMaterial: 'Ceramic Shield',
-	appleSeries: 'Apple Ax Series',
-};
+// const data = {
+// 	system: 'iOS 16',
+// 	series: 'iPhone 14 Pro',
+// 	year: '2022',
+// 	diagonal: '6,7"',
+// 	processor: 'Apple A16 Bionic',
+// 	numberOfCores: 6,
+// 	memory: '512 GB',
+// 	ram: '6 GB',
+// 	mainCam: '48 MP, 12 MP, 12 MP',
+// 	frontCam: '12 MP',
+// 	battery: '3200 MAg',
+// 	color: 'Deep Purple',
+// 	volume: 'None',
+// 	resolution: '2796x1290',
+// 	matrixType: 'OLED (Super Retina XDR)',
+// 	screenRefreshRate: '120 Hz',
+// 	screenMaterial: 'Ceramic Shield',
+// 	appleSeries: 'Apple Ax Series',
+// };
+
+const data = [
+	{
+		name: 'Series',
+		value: 'Iphone 14 Pro',
+	},
+	{
+		name: 'Graduation Year',
+		value: 2022,
+	},
+	{
+		name: 'Operating system',
+		value: 'iOS 16',
+	},
+	{
+		name: 'Screen diagonal',
+		value: '6,7"',
+	},
+	{
+		name: 'Processor',
+		value: 'Apple A16 Bionic',
+	},
+	{
+		name: 'Number of cores',
+		value: '6',
+	},
+	{
+		name: 'Internal memory',
+		value: '512 GB',
+	},
+	{
+		name: 'RAM',
+		value: '6 GB',
+	},
+	{
+		name: 'Main camera',
+		value: '48 MP, 12 MP, 12 MP',
+	},
+	{
+		name: 'Front camera',
+		value: '12 MP',
+	},
+	{
+		name: 'Battery capacity',
+		value: '3200 MAg',
+	},
+];
 
 export const specifications = [
 	{

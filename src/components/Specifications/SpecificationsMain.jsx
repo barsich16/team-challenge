@@ -1,12 +1,33 @@
 import css from './Specifications.module.scss';
 
-export const SpecificationsMain = ({ data }) => {
+export const SpecificationsMain = ({ data, type }) => {
 	return (
-		<div className={css.table}>
-			<h2 className={css.table_title}>Main specifications</h2>
+		<div className={type === 'short' ? css.tableShort : css.table}>
+			<h2 className={type === 'short' ? css.table_titleShort : css.table_title}>
+				Main specifications
+			</h2>
 			<ul className={css.table_wrapper}>
-				<li>
-					<p className={css.table_feature}>Series</p>
+				{data.map((item) => (
+					<li>
+						<p
+							className={
+								type === 'short' ? css.table_featureShort : css.table_feature
+							}
+						>
+							{item.name}
+						</p>
+						<p className={css.table_data}>{item.value}</p>
+					</li>
+				))}
+
+				{/* <li>
+					<p
+						className={
+							type === 'short' ? css.table_featureShort : css.table_feature
+						}
+					>
+						Series
+					</p>
 					<p className={css.table_data}>{data.series}</p>
 				</li>
 				<li>
@@ -49,7 +70,7 @@ export const SpecificationsMain = ({ data }) => {
 				<li>
 					<p className={css.table_feature}>Battery capacity</p>
 					<p className={css.table_data}> {data.battery}</p>
-				</li>
+				</li> */}
 			</ul>
 		</div>
 	);
