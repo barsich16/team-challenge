@@ -45,3 +45,12 @@ export const imagesURLArray = [
     'https://swiperjs.com/demos/images/nature-7.jpg',
     'https://swiperjs.com/demos/images/nature-8.jpg',
 ];
+
+export const mainProductInfo = [
+    {name: 'Screen diagonal', value: '6,7"', icon: 'truck'},
+    {name: 'Main camera', value: '48 MP, 12 MP, 12 MP', icon: 'truck'},
+    {name: 'Processor', value: 'Apple A16 Bionic', icon: 'truck'},
+    {name: 'Battery capacity', value: '3200 MAg', icon: 'truck'},
+    {name: 'Front camera', value: '12 MP', icon: 'truck'},
+    {name: 'Number of cores', value: '6', icon: 'truck'}
+]

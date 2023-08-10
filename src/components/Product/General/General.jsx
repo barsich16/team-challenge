@@ -12,6 +12,7 @@ import src from '../../../assets/icons/mono.png';
 import {useState} from 'react';
 import {GallerySlider} from "../Sliders/GallerySlider/GallerySlider";
 import {TestSlider} from "../Sliders/TestSlider/TestSlider";
+import {mainProductInfo} from '../../../data/items'
 
 export const General = () => {
     const data = [
@@ -52,17 +53,27 @@ export const General = () => {
             discount: 9,
         },
     ];
-    const images = [
-        'https://placehold.co/300x300/png',
-        'https://placehold.co/300x300/png',
-        'https://placehold.co/300x300/png',
-        'https://placehold.co/300x300/png',
-    ]
 
     return (
         <section className={styles.general}>
             <div className={styles.gallery}>
                 <TestSlider/>
+                <Maininfo data={mainProductInfo}/>
+                {/*Video Consultation Block*/}
+                <div className={styles.block}>
+                    <div className={cs(styles.del_item)}>
+                        <Icon type='truck' className={styles.icon}/>
+                        <p><b>Interested in the product?</b><br/> Our salesperson will show it online and answer your
+                            questions.</p>
+                    </div>
+                    <Button
+                        className={styles.consult_btn}
+                        textSize='middle'
+                        variant='outlined'
+                    >
+                        Video Consultation
+                    </Button>
+                </div>
             </div>
             {/*       Right Part       */}
             <div className={styles.data}>
@@ -197,15 +208,29 @@ export const General = () => {
                     </div>
                 </div>
                 <div
-                    className={cs(styles.block, styles.block_up, styles.block_gap)}
+                    className={cs(styles.block, styles.block_up)}
                 >
                     <div className={cs(styles.del_item)}>
                         <Icon type='shield' className={styles.icon}/>
                         <p><b>Guarantee.</b> 12 months. Exchange/Return of goods within 14 days</p>
                     </div>
                 </div>
-                <CardRow/>
             </div>
         </section>
     );
 };
+
+const Maininfo = ({data}) => {
+    return (
+        <div className={styles.main_info}>
+            {data.map(({name, value, icon}) => (
+                <div className={styles.info_item}>
+                    <Icon type={icon} className={styles.info_icon}/>
+                    <div className={styles.info}>
+                        <p className={styles.info_title}>{name}</p>
+                        <p className={styles.info_value}>{value}</p>
+                    </div>
+                </div>))}
+        </div>
+    )
+}

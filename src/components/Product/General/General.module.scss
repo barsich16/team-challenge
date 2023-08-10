@@ -1,6 +1,8 @@
 .general {
   display: flex;
-  justify-content: space-between;
+  justify-content: stretch;
+  padding-bottom: 100px;
+
   //align-items.js: center;
   gap: 60px;
 
@@ -16,7 +18,7 @@
       padding: 8px 16px;
       font-size: 18px;
       font-weight: 500;
-      line-height: 24px;
+      line-height: 22px;
       border: 1px solid #f9fafe;
 
       &_active {
@@ -101,8 +103,46 @@
   }
 
   .gallery {
-    width: 519px;
-    height: 436px;
+    width: 520px;
+    height: 100%;
+
+    .main_info {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-template-rows: repeat(2, 1fr);
+      grid-column-gap: 31px;
+      grid-row-gap: 20px;
+      width: 100%;
+      margin: 32px 0;
+
+      .info_item {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .info_icon {
+        width: 24px;
+        height: 24px;
+      }
+
+      .info {
+        font-size: 14px;
+        line-height: 16px;
+
+        &_title {
+          color: #7B7189;
+          font-weight: 400;
+        }
+
+        &_value {
+          color: var(--black);
+          font-weight: 600;
+        }
+      }
+
+    }
   }
 
   .data {
@@ -111,7 +151,7 @@
 
   .block {
     width: 100%;
-    padding: 20px;
+    padding: 19px 20px;
     border-radius: 12px;
     border: 1px solid var(--light-gray);
     display: flex;
@@ -126,6 +166,7 @@
     &_up {
       border-radius: 0 0 12px 12px;
       border-top: none;
+      padding: 19px 20px 20px;
     }
 
     &_gap {
@@ -162,7 +203,7 @@
       &_item {
         display: flex;
         align-items: center;
-        padding: 14px 9px;
+        padding: 13px 9px;
         border-radius: 12px;
         border: 1px solid var(--light-gray);
       }
@@ -224,5 +265,12 @@
   .icon {
     width: 24px;
     height: 24px;
+  }
+
+  .consult_btn {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    white-space: nowrap;
   }
 }
