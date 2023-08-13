@@ -14,6 +14,15 @@
     fill: var(--gray);
   }
 
+  &_small {
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    //display: flex;
+    //justify-content: center;
+    //align-items: center;
+  }
+
   &_like {
     background: var(--light-pink);
   }

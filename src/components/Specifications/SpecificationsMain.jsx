@@ -1,6 +1,8 @@
 import css from './Specifications.module.scss';
 import { ToolTip } from '../UI/Tooltip/Tooltip';
 import { ReactComponent as HelpCircle } from '../../assets/icons/help-circle.svg';
+import { ReactComponent as ReadMore } from '../../assets/icons/readMore.svg';
+import { Button } from '../UI/Button/Button';
 
 export const SpecificationsMain = ({ data, type }) => {
 	return (
@@ -31,6 +33,15 @@ export const SpecificationsMain = ({ data, type }) => {
 					</li>
 				))}
 			</ul>
+			<Button
+				variant='outlined'
+				textSize='middle'
+				// onClick={}
+				className={css.readMore}
+				icon={<ReadMore fill='var(--bright-purple)' />}
+			>
+				Read All
+			</Button>
 		</div>
 	);
 };
