@@ -68,23 +68,120 @@ export const ShortProductInfo = () => {
     )
 };
 
-export const ReviewList = () => {
+export const ReviewList = ({shortType = false}) => {
     const [results, setResults] = useState([]);
 
     return (<div className={styles.list}>
         <div className={styles.list_header}>
-            <div className={styles.search}>
-                <SearchInput className={styles.search_input} setResults={setResults}/>
-                <SearchIcon className={styles.icon}/>
-            </div>
-
-            <span className={styles.list_variant}>Relevance</span>
-            <span className={styles.list_variant}>Newest</span>
-            <span className={styles.list_variant}>Best</span>
-            <span className={styles.list_variant}>Worst</span>
+            {shortType ? <h5>Customer reviews</h5> : <>
+                <div className={styles.search}>
+                    <SearchInput className={styles.search_input} setResults={setResults}/>
+                    <SearchIcon className={styles.icon}/>
+                </div>
+                <span className={styles.list_variant}>Relevance</span>
+                <span className={styles.list_variant}>Newest</span>
+                <span className={styles.list_variant}>Best</span>
+                <span className={styles.list_variant}>Worst</span></>}
         </div>
         <div className={styles.list_items}>
-            <div className={styles.list_item}></div>
+            <div className={styles.list_item}>
+                <div className={styles.list_item_top}>
+                    <div className={styles.item_rating}>
+                        <Rating
+                            fillIcon={<StarFilled width={18} height={18}/>}
+                            emptyIcon={<StarFilled width={18} height={18}/>}
+                            // size={24}
+                            fillColor='#f6c660'
+                            // allowFraction
+                            readonly
+                            initialValue={5}
+                        />
+                        <span className={styles.item_author}>Daria</span>
+                    </div>
+                    <span className={styles.item_date}>2 days ago</span>
+
+                </div>
+                <p className={styles.list_item_comment}>
+                    Just received a phone. The A15 chip makes it super fast, and the camera is unreal! Love how it
+                    performs in low light. The sleek design is a head-turner. Battery life seems solid too. So far, it's
+                    exceeding my expectations. Impressed! 👍
+                </p>
+                <div className={styles.list_item_marks}>
+                    <div className={styles.positive_comment}>
+                        <Icon size='small' type='plus' className={styles.marks_icon}/>
+                        <p className={styles.list_item_comment}>
+                            The best phone to take pictures on the market. Battery, service, works all day. Stunning
+                            performance!
+                        </p>
+                    </div>
+                    <div><Icon size='small' type='minus' className={styles.marks_icon}/>
+                        <p className={styles.list_item_comment}>
+                            Pretty expensive and heavy to hold. Sometimes gets too warm, especially when its hot
+                            outside.
+                        </p></div>
+                </div>
+                <div className={styles.list_item_gallery}>
+                    <img src={imagesArray[1]} alt={`Test Image`}/>
+                </div>
+                <div className={styles.list_item_evaluate}>
+                    <button className={styles.reply}>Reply Daria</button>
+                    <div className={styles.reactions}>
+                        <Icon type='thumb-up' size='small' className={styles.like}/>
+                        <Icon type='slash' size='small'/>
+                        <Icon type='thumb-up' size='small' className={styles.like}/>
+                    </div>
+                </div>
+
+            </div>
+            <div className={styles.list_item}>
+                <div className={styles.list_item_top}>
+                    <div className={styles.item_rating}>
+                        <Rating
+                            fillIcon={<StarFilled width={18} height={18}/>}
+                            emptyIcon={<StarFilled width={18} height={18}/>}
+                            // size={24}
+                            fillColor='#f6c660'
+                            // allowFraction
+                            readonly
+                            initialValue={5}
+                        />
+                        <span className={styles.item_author}>Daria</span>
+                    </div>
+                    <span className={styles.item_date}>2 days ago</span>
+
+                </div>
+                <p className={styles.list_item_comment}>
+                    Just received a phone. The A15 chip makes it super fast, and the camera is unreal! Love how it
+                    performs in low light. The sleek design is a head-turner. Battery life seems solid too. So far, it's
+                    exceeding my expectations. Impressed! 👍
+                </p>
+                <div className={styles.list_item_marks}>
+                    <div className={styles.positive_comment}>
+                        <Icon size='small' type='plus' className={styles.marks_icon}/>
+                        <p className={styles.list_item_comment}>
+                            The best phone to take pictures on the market. Battery, service, works all day. Stunning
+                            performance!
+                        </p>
+                    </div>
+                    <div><Icon size='small' type='minus' className={styles.marks_icon}/>
+                        <p className={styles.list_item_comment}>
+                            Pretty expensive and heavy to hold. Sometimes gets too warm, especially when its hot
+                            outside.
+                        </p></div>
+                </div>
+                <div className={styles.list_item_gallery}>
+                    <img src={imagesArray[1]} alt={`Test Image`}/>
+                </div>
+                <div className={styles.list_item_evaluate}>
+                    <button className={styles.reply}>Reply Daria</button>
+                    <div className={styles.reactions}>
+                        <Icon type='thumb-up' size='small' className={styles.like}/>
+                        <Icon type='slash' size='small'/>
+                        <Icon type='thumb-up' size='small' className={styles.like}/>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>)
 }

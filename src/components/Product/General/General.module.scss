@@ -495,10 +495,19 @@
 }
 
 .list {
+  width: 100%;
+
   &_header {
     display: flex;
     align-items: center;
     gap: 12px;
+
+    h5 {
+      color: var(--black);
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+    }
   }
 
   &_variant {
@@ -533,11 +542,97 @@
   }
 
   &_items {
-
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
   &_item {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    border-radius: 12px;
+    background: #F9FAFE;
 
+
+    &_top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .item_rating {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        .item_author {
+          color: var(--black);
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 24px;
+        }
+      }
+
+      .item_date {
+        color: var(--purple-gray);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+      }
+    }
+
+    &_comment {
+      color: var(--black);
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+    }
+
+    &_marks {
+      .positive_comment {
+        margin-bottom: 16px;
+      }
+
+      .marks_icon {
+        display: block;
+        margin-bottom: 3px;
+      }
+    }
+
+    &_evaluate {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .reply {
+        color: var(--bright-purple);
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+      }
+
+      .reactions {
+        display: flex;
+        gap: 2px;
+        align-items: center;
+
+        .like {
+          &:last-child {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+
+    &_gallery {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
   }
 
 }
