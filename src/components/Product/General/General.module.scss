@@ -588,6 +588,9 @@
       font-size: 16px;
       font-weight: 500;
       line-height: 24px;
+      white-space: pre-wrap;
+      //max-width: 100%;
+      //word-wrap: break-word;
     }
 
     &_marks {
@@ -605,13 +608,6 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-
-      .reply {
-        color: var(--bright-purple);
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 24px;
-      }
 
       .reactions {
         display: flex;
@@ -633,6 +629,36 @@
       justify-content: space-between;
       gap: 30px;
     }
+
+    .reply {
+      color: var(--bright-purple);
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+    }
+
+    .divider {
+      height: 1px;
+      width: 100%;
+      background-color: var(--light-gray);
+    }
+
+    .reply_to {
+      display: flex;
+      padding: 4px 16px;
+      align-items: center;
+      gap: 10px;
+      border-radius: 12px;
+      border: 1px solid var(--bright-purple);
+      background: #F9FAFE;
+    }
   }
 
+  .load_more {
+    width: 100%;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+  }
 }

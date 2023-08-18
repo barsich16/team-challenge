@@ -23,6 +23,17 @@
     //align-items: center;
   }
 
+  &_tiny {
+    width: 21px;
+    height: 21px;
+    background-color: transparent;
+    margin-right: 10px;
+    //gap: 10px;
+    //display: flex;
+    //justify-content: center;
+    //align-items: center;
+  }
+
   &_like {
     background: var(--light-pink);
   }

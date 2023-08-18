@@ -15,6 +15,7 @@ import {ToolTip} from "../../UI/Tooltip/Tooltip";
 import {ReactComponent as Cart} from "../../../assets/icons/cart.svg";
 import {SearchInput} from "../../UI/SearchBar/SearchInput/SearchInput";
 import {ReactComponent as SearchIcon} from "../../../assets/icons/search.svg";
+import {ReactComponent as ReturnArrow} from "../../../assets/icons/return-arrow.svg";
 
 const imagesArray = [
     review_img,
@@ -67,6 +68,14 @@ export const ShortProductInfo = () => {
         </div>
     )
 };
+
+const text = `Hi Misha, I am very sorry that you are having difficulties with your purchase. Most often, problems with overheating occur due to background programs, stored cache and insufficient ventilation of the device. So please follow these steps to reduce the temperature of your device:
+  
+  1. Clear your app cache and delete any unused files to free up space and potentially improve performance 
+  
+  2. Make sure that the smartphone is not covered by cases or accessories during use, as this can trap heat. Also, avoid using the phone on soft surfaces such as beds or couches, which may block the device's ventilation.      
+               
+  3. Make sure you don't have too many background apps running. Programs running in the background can consume processing power and cause the device to heat up. Close any unnecessary programs or processes.`
 
 export const ReviewList = ({shortType = false}) => {
     const [results, setResults] = useState([]);
@@ -131,6 +140,29 @@ export const ReviewList = ({shortType = false}) => {
                         <Icon type='thumb-up' size='small' className={styles.like}/>
                     </div>
                 </div>
+                <div className={styles.divider}/>
+                <div className={styles.list_item_top}>
+                    <div className={styles.item_rating}>
+                        <button className={`${styles.reply} ${styles.reply_to}`}>
+                            <ReturnArrow/> <span>Reply to Misha</span></button>
+                        <span className={styles.item_author}>TechEase representative</span>
+                    </div>
+                    <span className={styles.item_date}>2 days ago</span>
+
+                </div>
+                {/*<p className={styles.list_item_comment}>*/}
+                <p className={styles.list_item_comment}>
+                    {text}
+                </p>
+                <div className={styles.list_item_evaluate}>
+                    <button className={styles.reply}>Reply TechEase representative</button>
+                    <div className={styles.reactions}>
+                        <Icon type='thumb-up' size='small' className={styles.like}/>
+                        <Icon type='slash' size='small'/>
+                        <Icon type='thumb-up' size='small' className={styles.like}/>
+                    </div>
+                </div>
+
 
             </div>
             <div className={styles.list_item}>
@@ -182,6 +214,9 @@ export const ReviewList = ({shortType = false}) => {
                 </div>
 
             </div>
+            <Button variant='outlined' textSize='middle' icon={<Icon size='tiny' type='plus'/>}
+                    className={styles.load_more}>Load
+                More</Button>
         </div>
     </div>)
 }
@@ -195,7 +230,7 @@ export const Reviews = () => {
             <Icon onClick={() => setShowSingleRow(prev => !prev)} size='small'
                   className={cs(styles.show_img, {[styles.show_img_active]: !showSingleRow})} type={'arrow-right'}/>
         </div>
-        {/*Reviews Image Block*/}
+        {/*Reviews Image Block */}
         <div className={styles.reviews_gallery}>
             {showSingleRow
                 ? imagesArray.slice(0, 4).map((image, index) => (
