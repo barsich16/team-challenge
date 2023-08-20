@@ -5,13 +5,14 @@ import { ReactComponent as Star } from '../../assets/icons/star.svg';
 import { Tabs } from '../TabContainer/TabContainer';
 import { General } from './General/General';
 import React from 'react';
+import { Feedback } from './Feedback/Feedback';
 
 const productTabsArray = [
 	{ tabName: 'General', content: <General /> },
 	{ tabName: 'Specifications', content: <div>Specifications</div> },
 	{
-		tabName: 'Reviews & Questions (324)',
-		content: <div>Reviews & Questions</div>,
+		tabName: 'Feedback & Questions (324)',
+		content: <Feedback />,
 	},
 	{ tabName: 'Accessories', content: <div>Accessories</div> },
 	{ tabName: 'Availability', content: <div>Availability</div> },

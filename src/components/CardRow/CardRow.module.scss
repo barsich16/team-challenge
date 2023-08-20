@@ -1,5 +1,49 @@
 .main {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-column-gap: 10px;
+  margin-top: 100px;
+
+  h3 {
+    color: #1E1D21;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 40px;
+    margin-bottom: 24px;
+  }
+
+  .scrollbar {
+    bottom: -10px;
+    //height: 2px;
+  }
+
+  .drag {
+    background-color: var(--bright-purple);
+  }
+
+  //display: grid;
+  //grid-template-columns: repeat(5, 1fr);
+  //grid-column-gap: 10px;
+}
+
+.swiper {
+  position: relative;
+  padding-bottom: 18px;
+
+
+  .arrow_prev, .arrow_next {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    border-radius: 8px;
+    background: #F9FAFE;
+  }
+
+  .arrow_prev {
+    left: 16px;
+    transform: translateY(-50%) rotate(-180deg);
+  }
+
+  .arrow_next {
+    right: 16px;
+    transform: translateY(-50%);
+  }
+
 }
