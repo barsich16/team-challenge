@@ -222,8 +222,8 @@ export const Overview = () => {
 const MainInfo = ({data}) => {
     return (
         <div className={styles.main_info}>
-            {data.map(({name, value, icon}) => (
-                <div className={styles.info_item}>
+            {data.map(({name, value, icon}, index) => (
+                <div key={index} className={styles.info_item}>
                     <Icon type={icon} className={styles.info_icon}/>
                     <div className={styles.info}>
                         <p className={styles.info_title}>{name}</p>

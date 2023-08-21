@@ -1,68 +1,69 @@
-import React, { useState } from 'react';
-// import {TabContent} from '../TabContent/TabContent';
+import React, {useEffect, useState} from 'react';
 import css from './TabContainer.module.scss';
 import cs from 'classnames';
-import { General } from '../Product/General/General';
-//. import styles from "../UI/Tooltip/ToolTip.module.scss";
-import { CSSTransition } from 'react-transition-group';
+import {CSSTransition} from 'react-transition-group';
 
-export const Tabs = ({ tabsArray }) => {
-	const [active, setActive] = useState(0);
-	console.log(active);
+export const Tabs = React.memo(({tabsArray, activeTab = 0, setActiveTab, ...props}) => {
+    // If activeTab exists, it means this tabs controls from the outside
+    // Otherwise, it controls by 'active'
+    const [active, setActive] = useState(activeTab);
+    console.log("Tabs");
 
-	const openTab = (e) => {
-		console.log(e.target);
-		setActive(+e.target.dataset.index);
-	};
+    useEffect(() => {
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+    }, [activeTab])
 
-	return (
-		<div>
-			<div className={css.container}>
-				{tabsArray.map((item, i) => (
-					<button
-						className={cs(css.btn, { [css.active]: i === Number(active) })}
-						onClick={openTab}
-						data-index={i}
-						key={i}
-					>
-						{item.tabName}
-					</button>
-				))}
-			</div>
-			{tabsArray.map((tab, index) => {
-				return (
-					<TabWrapper
-						key={index}
-						content={tab.content}
-						isActive={index === active}
-					/>
-				);
-			})}
+    const openTab = (e) => {
+        if (activeTab) {
+            setActiveTab(+e.target.dataset.index);
+        } else {
+            setActive(+e.target.dataset.index);
+        }
+    };
 
-			{/*{items.js[active] && <TabWrapper content={items.js[active].content}/>}*/}
-		</div>
-	);
-};
+    return (
+        <div {...props}>
+            <div className={css.container}>
+                {tabsArray.map((item, i) => (
+                    <button
+                        className={cs(css.btn, {[css.active]: i === Number(active || activeTab)})}
+                        onClick={openTab}
+                        data-index={i}
+                        key={i}
+                    >
+                        {item.tabName}
+                    </button>
+                ))}
+            </div>
+            {tabsArray.map((tab, index) => {
+                return (
+                    <TabWrapper
+                        key={index}
+                        content={tab.content}
+                        isActive={index === (active || activeTab)}
+                    />
+                );
+            })}
+        </div>
+    );
+});
 
 const transitionClasses = {
-	enter: css.enter,
-	enterActive: css.enterActive,
-	exit: css.exit,
-	exitActive: css.exitActive,
+    enter: css.enter,
+    enterActive: css.enterActive,
+    exit: css.exit,
+    exitActive: css.exitActive,
 };
 
-const TabWrapper = ({ content, isActive }) => {
-	// const [isShow, setIsShow] = useState(false);
-	console.log(isActive);
-
-	return (
-		<CSSTransition
-			in={isActive}
-			timeout={400}
-			classNames={transitionClasses}
-			unmountOnExit
-		>
-			{content}
-		</CSSTransition>
-	);
-};
+const TabWrapper = React.memo(({content, isActive}) => {
+    return (
+        <CSSTransition
+            in={isActive}
+            timeout={400}
+            classNames={transitionClasses}
+            unmountOnExit
+        >
+            {content}
+        </CSSTransition>
+    );
+});

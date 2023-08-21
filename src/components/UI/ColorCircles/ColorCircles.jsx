@@ -6,8 +6,9 @@ export const ColorCircles = ({data, setActiveItem, activeItemId, size = 'middle'
         //link to other product
     }
     return <div className={styles.colors}>
-        {data.map((item) => (
+        {data.map((item, index) => (
             <span
+                key={index}
                 onClick={() => handleClick(item)}
                 className={cs(styles.color, {
                     [styles.color_active]: item.id == activeItemId,

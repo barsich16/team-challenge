@@ -24,8 +24,9 @@ export const CardItem = ({data}) => {
                         <img src={src} alt=''/>
                     </div>
                     <div className={styles.colors}>
-                        {data.map((item) => (
+                        {data.map((item, index) => (
                             <span
+                                key={index}
                                 onClick={() => setActiveItem(item)}
                                 className={cs(styles.color, {
                                     [styles.color_active]: item.id == activeItem.id,
@@ -38,6 +39,7 @@ export const CardItem = ({data}) => {
                     <div className={styles.reviews}>
                         {new Array(5).fill().map((_, index) => (
                             <Star
+                                key={index}
                                 className={cs({
                                     [styles.star_disabled]: activeItem.rating <= index,
                                 })}
