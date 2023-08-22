@@ -6,7 +6,7 @@
 
 
   .card {
-    width: 680px;
+    //width: 680px;
     //height: 204px;
     display: flex;
     justify-content: space-between;
@@ -43,6 +43,11 @@
   }
 
   .buy {
+    //width: 100%;
+    width: 540px;
 
+    .cart {
+
+    }
   }
 }

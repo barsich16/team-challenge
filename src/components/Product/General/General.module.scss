@@ -94,15 +94,10 @@
   }
 
   .button {
-    padding: 6px 24px;
+    padding: 12px 30px;
     color: var(--white, #FFF);
     font-size: 16px;
     font-weight: 600;
-
-    svg {
-      width: 36px;
-      height: 36px;
-    }
   }
 
   .cart {
@@ -133,6 +128,10 @@
     &_down {
       border-radius: 12px 12px 0 0;
       //border-bottom: none;
+    }
+
+    &_end {
+      align-items: flex-end;
     }
 
     &_up {
