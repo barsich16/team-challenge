@@ -17,8 +17,6 @@ export const General = React.memo(({changeTab}) => {
                 Apple iPhone 14 Pro Max 512GB Deep Purple (MQ9X3)
             </h1>
             <Feedback changeTab={changeTab} shortType/>
-            <CardRow title='Recommendations'/>
-            <CardRow title='Recently viewed'/>
         </div>
     );
 });

@@ -15,10 +15,10 @@ import {ReactComponent as Slash} from '../../../assets/icons/slash.svg';
 import {ReactComponent as ThumbUp} from '../../../assets/icons/thumbs-up.svg';
 
 import styles from './Icon.module.scss';
-import {useState} from 'react';
+import {forwardRef, useState} from 'react';
 import cs from 'classnames';
 
-export const Icon = ({type, size = 'middle', onClick, className}) => {
+export const Icon = forwardRef(({type, size = 'middle', onClick, className}, ref) => {
     const types = {
         like: <Like/>,
         compare: <Compare/>,
@@ -54,8 +54,8 @@ export const Icon = ({type, size = 'middle', onClick, className}) => {
     const buttonStyles = className ? cs(className, defaultStyles) : defaultStyles;
 
     return (
-        <button className={buttonStyles} onClick={handleClick}>
+        <button className={buttonStyles} onClick={handleClick} ref={ref}>
             {types[type]}
         </button>
     );
-};
+});

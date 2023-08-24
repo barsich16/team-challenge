@@ -7,6 +7,7 @@ import {General} from './General/General';
 import React, {useState} from 'react';
 import {Feedback} from './Feedback/Feedback';
 import {Specifications} from "./Specifications/Specifications";
+import {CardRow} from "../CardRow/CardRow";
 
 
 export const Product = () => {
@@ -49,6 +50,8 @@ export const Product = () => {
             </div>
             <Tabs tabsArray={productTabsArray} activeTab={activeTab} setActiveTab={setActiveTab}
                   className={styles.wrapper}/>
+            <CardRow title='Recommendations'/>
+            <CardRow title='Recently viewed'/>
         </div>
     );
 };

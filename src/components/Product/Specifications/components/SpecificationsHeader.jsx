@@ -2,7 +2,7 @@ import styles from '../Specifications.module.scss';
 import iphone from '../../../../assets/icons/full-iphone.png';
 import React from 'react';
 import {mainProductInfo} from '../../../../data/items';
-import {CartBlock, MainInfo} from '../../General/Overview';
+import {CartBlock, CreditBlock, MainInfo} from '../../General/Overview';
 
 export const SpecificationsHeader = () => {
     return (
@@ -19,7 +19,8 @@ export const SpecificationsHeader = () => {
                 </div>
             </div>
             <div className={styles.buy}>
-                <CartBlock className={styles.cart}/>
+                <CartBlock type='small' className={styles.cart_block}/>
+                <CreditBlock bankCounts={2} className={styles.credit}/>
             </div>
         </div>
     );

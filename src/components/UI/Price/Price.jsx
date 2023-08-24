@@ -15,7 +15,7 @@ export const Price = ({size = 'small', actual, old, discountPercent}) => {
             <div className={styles.price_value}>
                 <span>{actual}</span>
                 <div className={styles.price_discount}>
-                    <ToolTip text={'Promotional offer'}>
+                    <ToolTip text={'Promotional offer'} position='top'>
                         <div className={styles.price_discount_value}>-{discountPercent}%</div>
                     </ToolTip>
                 </div>

@@ -1,6 +1,8 @@
 .container {
   position: relative;
   //display: inline-flex;
+  //width: 24px;
+  //height: 24px;
 }
 
 .center { //for centering tooltip
@@ -13,47 +15,81 @@
 
 .tooltip {
   position: absolute;
-  bottom: 135%;
-  left: 50%;
   width: 130px;
-  transform: translateX(-50%);
   margin-right: -50%;
-  padding: 8px 16px;
   justify-content: center;
   color: var(--white);
   background-color: var(--purple-gray);
   border-radius: 8px;
-  text-align: center;
   white-space: pre-line;
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
   pointer-events: none;
 
+
   &:after, &:before {
-    top: 100%;
-    left: 50% !important;
+    //top: 100%;
+    //left: 50% !important;
     border: solid transparent;
     content: "";
     height: 0;
     width: 0;
     position: absolute;
     pointer-events: none;
-    //border-radius: 5px;
   }
 
   &:after {
     border-color: rgba(136, 183, 213, 0);
-    border-top-color: var(--purple-gray);;
+    border-top-color: var(--purple-gray);
     border-width: 5px;
     margin-left: -5px;
   }
 
   &:before {
     border-color: rgba(194, 225, 245, 0);
-    border-top-color: var(--purple-gray);;
+    //border-left-color: var(--purple-gray);;
     border-width: 8px;
     margin-left: -8px;
+  }
+
+  &_top {
+    bottom: 135%;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    padding: 8px 16px;
+
+    &:after, &:before {
+      top: 100%;
+      left: 50% !important;
+    }
+
+    &:after {
+      border-top-color: var(--purple-gray);
+    }
+
+    &:before {
+      border-top-color: var(--purple-gray);;
+    }
+  }
+
+  &_left {
+    top: 50%;
+    left: -140px;
+    text-align: center;
+    padding: 12px 16px;
+    transform: translateY(-50%);
+
+    //background-color: transparent;
+    //border: 1px solid red;
+
+    &:before {
+      left: 136px;
+      top: 50% !important;
+      border-left-color: var(--purple-gray);
+      transform: translateY(-50%);
+    }
   }
 }
 

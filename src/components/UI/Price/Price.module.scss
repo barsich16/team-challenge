@@ -33,11 +33,11 @@
   }
 }
 
-.middle {
+.big {
   .price_value {
     position: relative;
     font-size: 36px;
-    line-height: 44px;
+    line-height: 36px;
   }
 
   .price_old {
@@ -46,11 +46,24 @@
   }
 }
 
+.middle {
+  .price_value {
+    position: relative;
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .price_old {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
 .small {
   position: relative;
 
   .price_value {
-    font-size: 20px;
+    font-size: 26px;
     line-height: 26px;
   }
 

@@ -10,6 +10,10 @@ import {ReactComponent as Cart} from '../../../assets/icons/cart.svg';
 import src from '../../../assets/icons/mono.png';
 import {ReactComponent as Credit} from '../../../assets/icons/credit.svg';
 import {Price} from "../../UI/Price/Price";
+import {Navigation, Scrollbar} from "swiper/modules";
+import {Swiper, SwiperSlide, useSwiper} from "swiper/react";
+import {CardItem} from "../../CardItem/CardItem";
+import React, {useRef} from "react";
 
 const data = [
     {
@@ -111,7 +115,7 @@ export const Overview = () => {
                         </Button>
                     </div>
                 </div>
-                <CartBlock/>
+                <CartBlock priceSize='big' className={cs(styles.block_up, styles.block_gap,)}/>
                 {/*<div className={cs(styles.block, styles.block_up, styles.block_gap, styles.block_end)}>*/}
                 {/*    <Price size='middle' actual='69 999' old='75 999' discountPercent={8}/>*/}
                 {/*    <div className={styles.cart}>*/}
@@ -124,38 +128,7 @@ export const Overview = () => {
                 {/*</div>*/}
 
                 {/*Credit Block*/}
-                <div className={cs(styles.block, styles.block_gap)}>
-                    <div className={styles.credit_info}>
-                        <span className={styles.credit_info_title}>On credit from</span>
-                        <span className={styles.credit_info_value}>8 499 / mon</span>
-                    </div>
-                    <div className={styles.credit_banks}>
-                        <div className={styles.credit_banks_item}>
-                            <img src={src} alt=''/>
-                            <span>4</span>
-                        </div>
-                        <div className={styles.credit_banks_item}>
-                            <img src={src} alt=''/>
-                            <span>4</span>
-                        </div>
-                        <div className={styles.credit_banks_item}>
-                            <img src={src} alt=''/>
-                            <span>4</span>
-                        </div>
-                        <div className={styles.credit_banks_item}>
-                            <img src={src} alt=''/>
-                            <span>4</span>
-                        </div>
-                    </div>
-                    <Button
-                        className={styles.credit_btn}
-                        textSize='middle'
-                        variant='outlined'
-                        icon={<Credit/>}
-                    >
-                        Buy on Credit
-                    </Button>
-                </div>
+                <CreditBlock/>
 
                 {/*Delivery Block*/}
                 <div className={cs(styles.block, styles.block_down)}>
@@ -231,10 +204,10 @@ export const MainInfo = ({data, className}) => {
     );
 };
 
-export const CartBlock = ({data, className}) => {
+export const CartBlock = ({data, className, type = 'middle', priceSize = 'middle'}) => {
     return (
-        <div className={cs(styles.block, styles.block_up, styles.block_gap, styles.block_end, className)}>
-            <Price size='middle' actual='69 999' old='75 999' discountPercent={8}/>
+        <div className={cs(styles.block, styles.block_end, styles[`block_${type}`], className)}>
+            <Price size={priceSize} actual='69 999' old='75 999' discountPercent={8}/>
             <div className={styles.cart}>
                 <Icon type='like'/>
                 <Icon type='compare'/>
@@ -242,6 +215,81 @@ export const CartBlock = ({data, className}) => {
                     Add to Cart
                 </Button>
             </div>
+        </div>
+    )
+}
+
+export const CreditBlock = ({bankCounts = 4, className}) => {
+    const prevRef = useRef(null);
+    const nextRef = useRef(null);
+
+    return (
+        <div className={cs(styles.block, styles.block_gap, className)}>
+            <div className={styles.credit_info}>
+                <span className={styles.credit_info_title}>On credit from</span>
+                <span className={styles.credit_info_value}>8 499 / mon</span>
+            </div>
+            <Swiper
+                onInit={(swiper) => {
+                    swiper.params.navigation.prevEl = prevRef.current;
+                    swiper.params.navigation.nextEl = nextRef.current;
+                    swiper.navigation.init();
+                    swiper.navigation.update();
+                }}
+                modules={[Navigation]}
+                slidesPerView={bankCounts}
+                spaceBetween={10}
+                className={styles.swiper}
+            >
+                <SwiperSlide>
+                    <div className={styles.credit_banks_item}>
+                        <img src={src} alt=''/>
+                        <span>4</span>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className={styles.credit_banks_item}>
+                        <img src={src} alt=''/>
+                        <span>4</span>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className={styles.credit_banks_item}>
+                        <img src={src} alt=''/>
+                        <span>4</span>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className={styles.credit_banks_item}>
+                        <img src={src} alt=''/>
+                        <span>4</span>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className={styles.credit_banks_item}>
+                        <img src={src} alt=''/>
+                        <span>4</span>
+                    </div>
+                </SwiperSlide>
+                <Icon
+                    className={styles.arrow_prev}
+                    type='arrow-right'
+                    ref={prevRef}
+                />
+                <Icon
+                    className={styles.arrow_next}
+                    type='arrow-right'
+                    ref={nextRef}
+                />
+            </Swiper>
+            <Button
+                className={styles.credit_btn}
+                textSize='middle'
+                variant='outlined'
+                icon={<Credit/>}
+            >
+                Buy on Credit
+            </Button>
         </div>
     )
 }
