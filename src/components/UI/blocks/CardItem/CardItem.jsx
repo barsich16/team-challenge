@@ -1,12 +1,12 @@
 import styles from './CardItem.module.scss';
-import {ReactComponent as Star} from '../../assets/icons/star.svg';
-import {ReactComponent as Cart} from '../../assets/icons/cart.svg';
+import {ReactComponent as Star} from '../../../../assets/icons/star.svg';
+import {ReactComponent as Cart} from '../../../../assets/icons/cart.svg';
 
 import src from './iphone.png';
 import cs from 'classnames';
 import {useState} from 'react';
-import {ToolTip} from '../UI/Tooltip/Tooltip';
-import {Icon} from "../UI/Icon/Icon";
+import {ToolTip} from '../../Tooltip/Tooltip';
+import {Icon} from "../../Icon/Icon";
 
 export const CardItem = ({data}) => {
     const [activeItem, setActiveItem] = useState(data[0]);

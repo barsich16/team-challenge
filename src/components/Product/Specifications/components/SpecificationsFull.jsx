@@ -1,6 +1,6 @@
 import css from './Specifications.module.scss';
-import {ToolTip} from '../UI/Tooltip/Tooltip';
-import {ReactComponent as HelpCircle} from '../../assets/icons/help-circle.svg';
+import {ToolTip} from '../../../UI/Tooltip/Tooltip';
+import {ReactComponent as HelpCircle} from '../../../../assets/icons/help-circle.svg';
 import {Tooltip} from "react-tooltip";
 
 export const SpecificationsFull = ({specifications}) => {

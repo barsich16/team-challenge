@@ -2,7 +2,7 @@ import styles from './Feedback.module.scss';
 import {Tabs} from '../../TabContainer/TabContainer';
 import React, {useEffect, useState} from 'react';
 import {FeedbackHeader} from './components/FeedbackHeader';
-import {CardRow} from '../../CardRow/CardRow';
+import {CardRow} from '../../UI/blocks/CardRow/CardRow';
 import {FeedbackTab} from './components/FeedbackTab';
 
 export const Feedback = React.memo(({shortType, changeTab}) => {

@@ -7,7 +7,7 @@ import {General} from './General/General';
 import React, {useState} from 'react';
 import {Feedback} from './Feedback/Feedback';
 import {Specifications} from "./Specifications/Specifications";
-import {CardRow} from "../CardRow/CardRow";
+import {CardRow} from "../UI/blocks/CardRow/CardRow";
 
 
 export const Product = () => {
@@ -29,6 +29,7 @@ export const Product = () => {
     };
     return (
         <div className={cs('wrapper', styles.main)}>
+            {/*<div className='wrapper'>*/}
             <Breadcrumbs/>
             <div className={styles.name_rating}>
                 <h1 className={styles.title}>
@@ -48,6 +49,8 @@ export const Product = () => {
                     <span className={styles.stars_count}>(312)</span>
                 </div>
             </div>
+            {/*</div>*/}
+
             <Tabs tabsArray={productTabsArray} activeTab={activeTab} setActiveTab={setActiveTab}
                   className={styles.wrapper}/>
             <CardRow title='Recommendations'/>

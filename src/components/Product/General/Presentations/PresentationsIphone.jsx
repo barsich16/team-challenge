@@ -1,15 +1,15 @@
 import css from './PresentationsIphone.module.scss';
-import photo from '../../assets/iphone/back-frontfullphone.jpg';
-import photo2 from '../../assets/iphone/bigcamera.jpg';
-import photo3 from '../../assets/iphone/back+fronthalf.jpg';
-import photo4 from '../../assets/iphone/magsafeaccessories.jpg';
-import photo51 from '../../assets/iphone/dynamic-island-cropped.jpg';
-import photo52 from '../../assets/iphone/always-on-display-cropped.jpg';
-import photo53 from '../../assets/iphone/a16-boinic-chip.jpg';
-import photo55 from '../../assets/iphone/iphone-14-pro-car-crash.jpg';
-import photo61 from '../../assets/iphone/iphone14profull.jpg';
-import photo62 from '../../assets/iphone/usbclightningcable.jpg';
-import logoIphone from '../../assets/iphone/iphone14pro-svg-text.png';
+import photo from '../../../../assets/iphone/back-frontfullphone.jpg';
+import photo2 from '../../../../assets/iphone/bigcamera.jpg';
+import photo3 from '../../../../assets/iphone/back+fronthalf.jpg';
+import photo4 from '../../../../assets/iphone/magsafeaccessories.jpg';
+import photo51 from '../../../../assets/iphone/dynamic-island-cropped.jpg';
+import photo52 from '../../../../assets/iphone/always-on-display-cropped.jpg';
+import photo53 from '../../../../assets/iphone/a16-boinic-chip.jpg';
+import photo55 from '../../../../assets/iphone/iphone-14-pro-car-crash.jpg';
+import photo61 from '../../../../assets/iphone/iphone14profull.jpg';
+import photo62 from '../../../../assets/iphone/usbclightningcable.jpg';
+import logoIphone from '../../../../assets/iphone/iphone14pro-svg-text.png';
 
 export const PresentationsIphone = () => {
     return (

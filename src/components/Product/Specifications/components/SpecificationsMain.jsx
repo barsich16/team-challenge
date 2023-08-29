@@ -1,8 +1,8 @@
 import css from './Specifications.module.scss';
-import {ToolTip} from '../UI/Tooltip/Tooltip';
-import {ReactComponent as HelpCircle} from '../../assets/icons/help-circle.svg';
-import {ReactComponent as ReadMore} from '../../assets/icons/readMore.svg';
-import {Button} from '../UI/Button/Button';
+import {ToolTip} from '../../../UI/Tooltip/Tooltip';
+import {ReactComponent as HelpCircle} from '../../../../assets/icons/help-circle.svg';
+import {ReactComponent as ReadMore} from '../../../../assets/icons/readMore.svg';
+import {Button} from '../../../UI/Button/Button';
 import {Tooltip} from "react-tooltip";
 
 export const SpecificationsMain = ({data, type}) => {

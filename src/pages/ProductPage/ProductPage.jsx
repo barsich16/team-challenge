@@ -1,4 +1,4 @@
-import {CardRow} from '../../components/CardRow/CardRow';
+import {CardRow} from '../../components/UI/blocks/CardRow/CardRow';
 import {Product} from "../../components/Product/Product";
 
 export const ProductPage = () => {
