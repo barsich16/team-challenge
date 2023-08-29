@@ -13,6 +13,7 @@ import {ReactComponent as Plus} from '../../../assets/icons/plus.svg';
 import {ReactComponent as Minus} from '../../../assets/icons/minus.svg';
 import {ReactComponent as Slash} from '../../../assets/icons/slash.svg';
 import {ReactComponent as ThumbUp} from '../../../assets/icons/thumbs-up.svg';
+import {ReactComponent as StarReview} from '../../../assets/icons/star-review.svg';
 
 import styles from './Icon.module.scss';
 import {forwardRef, useState} from 'react';
@@ -34,7 +35,8 @@ export const Icon = forwardRef(({type, size = 'middle', onClick, className}, ref
         plus: <Plus/>,
         minus: <Minus/>,
         slash: <Slash/>,
-        ['thumb-up']: <ThumbUp/>
+        ['thumb-up']: <ThumbUp/>,
+        ['star-review']: <StarReview/>
     };
 
     const [isClicked, setIsClicked] = useState(false);

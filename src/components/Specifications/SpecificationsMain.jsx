@@ -3,6 +3,7 @@ import {ToolTip} from '../UI/Tooltip/Tooltip';
 import {ReactComponent as HelpCircle} from '../../assets/icons/help-circle.svg';
 import {ReactComponent as ReadMore} from '../../assets/icons/readMore.svg';
 import {Button} from '../UI/Button/Button';
+import {Tooltip} from "react-tooltip";
 
 export const SpecificationsMain = ({data, type}) => {
     return (
@@ -26,16 +27,24 @@ export const SpecificationsMain = ({data, type}) => {
 
                         {/*Відображати якщо є текст підказки*/}
                         {type !== 'short' && (
-                            <ToolTip text={'Example text'}>
-                                <HelpCircle/>
-                            </ToolTip>
+                            <>
+                                <div data-tooltip-id="main-specification"
+                                     data-tooltip-content="Random-access memory, or RAM, is one of the most important parts of your computer. It provides high-speed, short-term memory for your computer\'s CPU. The amount of computer memory you need depends on what you use your computer for, but 12 GB of RAM is a good general minimum standard.">
+                                    <HelpCircle/>
+                                </div>
+                                <Tooltip className={css.tooltip} place='left' id="main-specification"/>
+                            </>
+
+                            // <ToolTip text={'Example text'}>
+                            //     <HelpCircle/>
+                            // </ToolTip>
                         )}
                     </li>
                 ))}
             </ul>
             <Button
                 variant='outlined'
-                textSize='middle'
+
                 // onClick={}
                 className={css.readMore}
                 icon={<ReadMore fill='var(--bright-purple)'/>}

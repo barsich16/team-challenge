@@ -30,18 +30,14 @@ export const FeedbackHeader = () => {
                 <div className={styles.leave_feedback}>
                     <Button
                         variant='outlined'
-                        textSize='middle'
-                        // onClick={}
-                        className={styles.leave_feedback_btn}
                         icon={<Icon size='small' type='help-circle'/>}
                     >
                         Ask a question
                     </Button>
                     <Button
-                        textSize='middle'
-                        // onClick={}
-                        className={styles.leave_feedback_btn}
-                        icon={<Icon size='small' type='help-circle'/>}
+                        // onClick={s}
+                        variant='primary'
+                        icon={<Icon size='small' type='star-review'/>}
                     >
                         Leave a review
                     </Button>

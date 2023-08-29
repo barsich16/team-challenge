@@ -28,18 +28,6 @@
     display: flex;
     align-items: center;
     gap: 20px;
-
-    &_btn {
-      font-size: 16px;
-      line-height: 24px;
-      font-weight: 600;
-      gap: 10px;
-
-      svg {
-        width: 24px;
-        height: 24px;
-      }
-    }
   }
 
   .feedback_variants {
@@ -52,7 +40,7 @@
     &_item {
       padding: 12px 24px;
       border-radius: 12px;
-      background-color: #F9FAFE;
+      background-color: var(--lightest-gray);
       font-size: 16px;
       font-weight: 500;
       line-height: 24px;
@@ -186,7 +174,7 @@
       padding: 8px 16px;
       border-radius: 12px;
       opacity: 0.8;
-      background-color: #F9FAFE;
+      background-color: var(--lightest-gray);
     }
 
     .search {
@@ -226,7 +214,7 @@
       flex-direction: column;
       gap: 24px;
       border-radius: 12px;
-      background: #F9FAFE;
+      background: var(--lightest-gray);
 
 
       &_top {
@@ -322,7 +310,7 @@
         gap: 10px;
         border-radius: 12px;
         border: 1px solid var(--bright-purple);
-        background: #F9FAFE;
+        background: var(--lightest-gray);
       }
     }
 

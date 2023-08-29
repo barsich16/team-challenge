@@ -23,13 +23,13 @@
     gap: 10px;
 
     &_btn {
-      background-color: #f9fafe;
+      background-color: var(--lightest-gray);
       color: var(--black);
       padding: 8px 16px;
       font-size: 18px;
       font-weight: 500;
       line-height: 22px;
-      border: 1px solid #f9fafe;
+      border: 1px solid var(--lightest-gray);
 
       &_active {
         border: 1px solid var(--bright-purple);
@@ -127,7 +127,7 @@
   }
 
   .date {
-    color: var(--black, #1E1D21);
+    color: var(--black);
     font-size: 14px;
     font-weight: 600;
     line-height: 22px; /* 157.143% */
@@ -135,7 +135,7 @@
 
   .cost {
     text-align: right;
-    color: var(--black, #1E1D21);
+    color: var(--black);
     font-size: 14px;
     font-weight: 600;
     line-height: 22px; /* 157.143% */
@@ -237,18 +237,10 @@
       gap: 12px;
     }
 
-    .button {
-      width: 194px;
-    }
+    //.button {
+    //  width: 194px;
+    //}
   }
-}
-
-.button {
-  padding: 12px 30px;
-  color: var(--white, #FFF);
-  font-size: 16px;
-  font-weight: 600;
-  min-width: 194px;
 }
 
 .credit {
@@ -264,7 +256,7 @@
     }
 
     &_value {
-      color: var(--black, #1E1D21);
+      color: var(--black);
       font-size: 22px;
       font-weight: 500;
       line-height: 28px;

@@ -3,8 +3,8 @@
   flex-direction: column;
   //align-items.js: center;
   border-radius: 12px;
-  border: 1px solid #E0E4F0;
-  background: #FFF;
+  border: 1px solid var(--light-gray);
+  background: var(--white);
   padding: 20px;
   max-width: 240px;
 
@@ -47,7 +47,7 @@
         position: absolute;
         width: 16px;
         height: 16px;
-        border: 1px solid #5826DA;
+        border: 1px solid var(--bright-purple);
         border-radius: 50%;
         top: -2px;
         left: -2px;

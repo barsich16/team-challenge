@@ -1,6 +1,10 @@
 .price {
   //position: relative;
   &_value {
+
+  }
+
+  &_actual {
     color: var(--black);
     font-weight: 600;
   }
@@ -34,10 +38,15 @@
 }
 
 .big {
+  //position: relative;
+
   .price_value {
     position: relative;
-    font-size: 36px;
-    line-height: 36px;
+
+    .price_actual {
+      font-size: 36px;
+      line-height: 36px;
+    }
   }
 
   .price_old {

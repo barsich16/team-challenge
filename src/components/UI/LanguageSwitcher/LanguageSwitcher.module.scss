@@ -28,7 +28,7 @@
     border-radius: 8px;
 
     &_light {
-      background: #DACCFF;
+      background: var(--lavander);
     }
 
     &_dark {
@@ -58,7 +58,7 @@
       color: var(--bright-purple);
 
       &_active {
-        color: #fff;
+        color: var(--white);
       }
     }
 

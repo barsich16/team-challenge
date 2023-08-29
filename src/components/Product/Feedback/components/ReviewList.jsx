@@ -233,7 +233,6 @@ export const ReviewList = ({type = 'reviews', shortType = false, changeTab}) => 
                 {shortType && (
                     <Button
                         variant='outlined'
-                        textSize='middle'
                         icon={<Icon size='tiny' type='plus'/>}
                         className={styles.load_more}
                         onClick={() => changeTab(2)}

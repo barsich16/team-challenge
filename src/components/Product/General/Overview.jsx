@@ -5,14 +5,12 @@ import cs from 'classnames';
 import {Icon} from '../../UI/Icon/Icon';
 import {Button} from '../../UI/Button/Button';
 import {ColorCircles} from '../../UI/ColorCircles/ColorCircles';
-import {ToolTip} from '../../UI/Tooltip/Tooltip';
 import {ReactComponent as Cart} from '../../../assets/icons/cart.svg';
 import src from '../../../assets/icons/mono.png';
 import {ReactComponent as Credit} from '../../../assets/icons/credit.svg';
 import {Price} from "../../UI/Price/Price";
 import {Navigation, Scrollbar} from "swiper/modules";
 import {Swiper, SwiperSlide, useSwiper} from "swiper/react";
-import {CardItem} from "../../CardItem/CardItem";
 import React, {useRef} from "react";
 
 const data = [
@@ -72,7 +70,6 @@ export const Overview = () => {
                     </div>
                     <Button
                         className={styles.consult_btn}
-                        textSize='middle'
                         variant='outlined'
                     >
                         Video Consultation
@@ -86,29 +83,21 @@ export const Overview = () => {
                     <ColorCircles data={data} activeItemId={1}/>
                     <div className={styles.memory}>
                         <Button
-                            textSize='middle'
-                            variant='outlined'
                             className={`${styles.memory_btn} ${styles.memory_btn_active}`}
                         >
                             125 GB
                         </Button>
                         <Button
-                            textSize='middle'
-                            variant='outlined'
                             className={styles.memory_btn}
                         >
                             125 GB
                         </Button>
                         <Button
-                            textSize='middle'
-                            variant='outlined'
                             className={styles.memory_btn}
                         >
                             125 GB
                         </Button>
                         <Button
-                            textSize='middle'
-                            variant='outlined'
                             className={styles.memory_btn}
                         >
                             125 GB
@@ -116,18 +105,6 @@ export const Overview = () => {
                     </div>
                 </div>
                 <CartBlock priceSize='big' className={cs(styles.block_up, styles.block_gap,)}/>
-                {/*<div className={cs(styles.block, styles.block_up, styles.block_gap, styles.block_end)}>*/}
-                {/*    <Price size='middle' actual='69 999' old='75 999' discountPercent={8}/>*/}
-                {/*    <div className={styles.cart}>*/}
-                {/*        <Icon type='like'/>*/}
-                {/*        <Icon type='compare'/>*/}
-                {/*        <Button className={styles.button} icon={<Cart width={20} height={20}/>}>*/}
-                {/*            Add to Cart*/}
-                {/*        </Button>*/}
-                {/*    </div>*/}
-                {/*</div>*/}
-
-                {/*Credit Block*/}
                 <CreditBlock/>
 
                 {/*Delivery Block*/}
@@ -211,10 +188,11 @@ export const CartBlock = ({data, className, type = 'middle', priceSize = 'middle
             <div className={styles.cart}>
                 <Icon type='like'/>
                 <Icon type='compare'/>
-                <Button className={styles.button} icon={<Cart width={20} height={20}/>}>
+                <Button variant='primary' icon={<Cart width={20} height={20}/>} clickedText='In Cart'>
                     Add to Cart
                 </Button>
             </div>
+            {/*<Tooltip place='top' id="price-tooltip"/>*/}
         </div>
     )
 }
@@ -284,7 +262,7 @@ export const CreditBlock = ({bankCounts = 4, className}) => {
             </Swiper>
             <Button
                 className={styles.credit_btn}
-                textSize='middle'
+
                 variant='outlined'
                 icon={<Credit/>}
             >
