@@ -7,9 +7,12 @@ import {LanguageSwitcher} from '../UI/LanguageSwitcher/LanguageSwitcher';
 import {Icon} from '../UI/Icon/Icon';
 import logo from '../../assets/logo/logo-black.png';
 import {Link} from "react-router-dom";
+import { MenuCatalogue } from '../MenuCatalogue/MenuCatalogue';
 
 export const Header = () => {
     let [isShow, setIsShow] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     const showOverlay = () => {
         setIsShow(true);
     };
@@ -17,6 +20,10 @@ export const Header = () => {
     const hideOverlay = () => {
         setIsShow(false);
     };
+
+    const onOpenMenuCatalogue = () => {
+      setIsMenuOpen(!isMenuOpen)
+    }
 
     return (
         <>
@@ -28,9 +35,16 @@ export const Header = () => {
                         <Link to={'/'}>
                             <img src={logo} alt="Logotype"/>
                         </Link>
-                        <Button icon={<Catalogue/>} className={styles.button}>
-                            Catalogue
+                        <Button 
+                          icon={<Catalogue/>} 
+                          className={styles.button}
+                          onClick={onOpenMenuCatalogue}
+                        >
+                          Catalogue
                         </Button>
+
+                        {isMenuOpen && <MenuCatalogue isOpen={isMenuOpen}/>}
+
                         <SearchBar/>
                         <LanguageSwitcher/>
                         <Icon type='user'/>

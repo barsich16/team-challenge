@@ -1,0 +1,98 @@
+.menu {
+  display: flex;
+  opacity: 1;
+  box-sizing: border-box;
+  position: absolute;
+  top: 75px;
+  background-color: var(--white);
+  color: var(--black);
+
+  &__categories {
+    min-width: 320px;
+    padding: 24px 0;
+
+    &__li {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 20px;
+      gap: 12px;
+      cursor: pointer;
+      transition: 0.3s all;
+
+      &:hover {
+       background-color: var(--light-gray);
+      }
+    }
+
+    &__li:hover .menu__categories__icon,
+    &__li:hover .text__categories {
+      color: var(--bright-purple);
+      fill: var(--bright-purple);
+    }
+
+    &__icon {
+      width: 24px;
+    }
+  }
+
+  &__active {
+    color: var(--bright-purple);
+  }
+
+  &__disable {
+    color: grey;
+    pointer-events: none;
+  }
+}
+
+.wrapper_goods{
+  display: flex;
+  min-width: 950px;
+  gap: 20px;
+  padding: 24px 20px;
+  justify-content: start;
+}
+
+.text {
+  font-family: 'Inter';
+  &__categories {
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  &__goods_title {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--bright-purple)
+  }
+
+  &__goods_item {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+  }
+}
+
+.show_all {
+  margin-top: 12px;
+  color: var(--bright-purple);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+
+  &::before {
+    content: url('../../assets/icons/read-more.svg');
+    vertical-align: middle;
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+  }
+}
