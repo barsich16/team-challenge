@@ -10,7 +10,7 @@ export const LanguageSwitcher = ({locale = 'en', theme = 'light'}) => {
     };
 
     return (
-        <div className={cs(styles.toggle, styles[`toggle_${theme}`])}>
+        <div className={cs(styles.toggle, styles[`toggle_${activeLang}`], styles[`toggle_${theme}`])}>
             <div className={styles.btn_wrapper}>
                 <div
                     className={cs(styles.activeBg, styles[`activeBg_${theme}`], styles[activeLang])}

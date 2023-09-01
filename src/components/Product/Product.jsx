@@ -8,6 +8,7 @@ import React, {useState} from 'react';
 import {Feedback} from './Feedback/Feedback';
 import {Specifications} from "./Specifications/Specifications";
 import {CardRow} from "../UI/blocks/CardRow/CardRow";
+import {Accessories} from "./Accessories/Accessories";
 
 
 export const Product = () => {
@@ -20,7 +21,7 @@ export const Product = () => {
             tabName: 'Feedback & Questions (324)',
             content: <Feedback/>,
         },
-        {tabName: 'Accessories', content: <div>Accessories</div>},
+        {tabName: 'Accessories', content: <Accessories/>},
         {tabName: 'Availability', content: <div>Availability</div>},
     ];
 

@@ -10,14 +10,15 @@ import 'swiper/scss/navigation';
 import styles from './CardRow.module.scss';
 import {Scrollbar, Navigation} from 'swiper/modules';
 import {Icon} from '../../Icon/Icon';
+import src from '../../../../assets/temp/iphone.png'
 
-export const CardRow = ({title}) => {
-    const data = [
+const items = [
+    [
         {
             id: 1,
             colorName: 'green',
             colorValue: '#333',
-            image: 'png',
+            image: src,
             name: 'Apple iPhone 14 Pro Max 512GB Deep Purple...',
             price: 69999,
             oldPrice: 75999,
@@ -29,7 +30,7 @@ export const CardRow = ({title}) => {
             id: 2,
             colorName: 'red',
             colorValue: '#666',
-            image: '/iphone.png',
+            image: src,
             name: 'Apple iPhone 14 Pro Max 512GB Purple...',
             price: 79999,
             oldPrice: 85999,
@@ -41,7 +42,7 @@ export const CardRow = ({title}) => {
             id: 3,
             colorName: 'red',
             colorValue: '#666',
-            image: '/iphone.png',
+            image: src,
             name: 'Apple iPhone 14 Pro Max 512GB Purple...',
             price: 79999,
             oldPrice: 85999,
@@ -49,7 +50,35 @@ export const CardRow = ({title}) => {
             reviews: 245,
             discount: 9,
         },
-    ];
+    ],
+    {
+        id: 10,
+        colorName: 'green',
+        colorValue: '#333',
+        image: src,
+        name: 'Apple iPhone 14 Pro Max 512GB Deep Purple...',
+        price: 69999,
+        oldPrice: 75999,
+        rating: 4,
+        reviews: 244,
+        discount: 8,
+    },
+    {
+        id: 11,
+        colorName: 'green',
+        colorValue: '#333',
+        image: src,
+        name: 'Apple iPhone 14 Pro Max 512GB Deep Purple...',
+        price: 69999,
+        oldPrice: 75999,
+        rating: 4,
+        reviews: 244,
+        discount: 8,
+    },
+
+]
+
+export const CardRow = ({title, data = items}) => {
     return (
         <div className={styles.main}>
             <h3>{title}</h3>
@@ -64,28 +93,13 @@ export const CardRow = ({title}) => {
                 spaceBetween={10}
                 className={styles.swiper}
             >
-                <SwiperSlide>
-                    <CardItem data={data}/>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <CardItem data={data}/>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <CardItem data={data}/>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <CardItem data={data}/>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <CardItem data={data}/>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <CardItem data={data}/>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <CardItem data={data}/>
-                </SwiperSlide>
-                <SlideButtons/>
+                {data.map((item) => (
+                    <SwiperSlide>
+                        <CardItem data={item}/>
+                    </SwiperSlide>
+                ))}
+                {data.length > 5 && <SlideButtons/>}
+
             </Swiper>
         </div>
     );
