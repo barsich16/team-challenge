@@ -20,7 +20,7 @@
       transition: 0.3s all;
 
       &:hover {
-       background-color: var(--light-gray);
+        background-color: var(--light-gray);
       }
     }
 
@@ -30,8 +30,16 @@
       fill: var(--bright-purple);
     }
 
+    &__li:hover svg * {
+      color: var(--bright-purple);
+      fill: var(--bright-purple);
+    }
+
+
     &__icon {
-      width: 24px;
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 
@@ -45,7 +53,7 @@
   }
 }
 
-.wrapper_goods{
+.wrapper_goods {
   display: flex;
   min-width: 950px;
   gap: 20px;
@@ -55,6 +63,7 @@
 
 .text {
   font-family: 'Inter';
+
   &__categories {
     width: 100%;
     text-align: left;
