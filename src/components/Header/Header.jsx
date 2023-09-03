@@ -1,5 +1,10 @@
 import styles from './Header.module.scss';
 import { useState } from 'react';
+import { Button } from '../UI/Button/Button';
+import { ReactComponent as Catalogue } from '../../assets/icons/catalogue.svg';
+import { SearchBar } from '../UI/SearchBar/SearchBar';
+import { LanguageSwitcher } from '../UI/LanguageSwitcher/LanguageSwitcher';
+import { Icon } from '../UI/Icon/Icon';
 
 export const Header = () => {
 	let [isShow, setIsShow] = useState(false);
@@ -16,19 +21,33 @@ export const Header = () => {
 			<header
 				className={`${styles.header} ${isShow ? styles.header_open : ''}`}
 			>
-				<HeaderItem isActive showOverlay={showOverlay}>
-					Burger
-				</HeaderItem>
-				<HeaderItem isActive showOverlay={showOverlay}>
-					Searchbar
-				</HeaderItem>
-				<HeaderItem isActive showOverlay={showOverlay}>
-					Cart
-				</HeaderItem>
+				<div className='wrapper'>
+					<div className={styles.inner}>
+						<div className={styles.logo}></div>
+						<Button textSize='middle' icon={<Catalogue />}>
+							Catalogue
+						</Button>
+						<SearchBar />
+						<LanguageSwitcher />
+						<Icon type='user' />
+						<Icon type='like' />
+						<Icon type='compare' />
+						<Icon type='cart' />
+						{/*<HeaderItem isActive showOverlay={showOverlay}>*/}
+						{/*    Burger*/}
+						{/*</HeaderItem>*/}
+						{/*<HeaderItem isActive showOverlay={showOverlay}>*/}
+						{/*	Searchbar*/}
+						{/*</HeaderItem>*/}
+						{/*<HeaderItem isActive showOverlay={showOverlay}>*/}
+						{/*	Cart*/}
+						{/*</HeaderItem>*/}
+					</div>
+				</div>
 			</header>
 			<div
 				onClick={hideOverlay}
-				className={`${styles.wrapper} ${isShow ? styles.wrapper_open : ''}`}
+				className={`${styles.overlay} ${isShow ? styles.overlay_open : ''}`}
 			/>
 		</>
 	);
