@@ -7,6 +7,7 @@ import {ToolTip} from '../../Tooltip/Tooltip';
 import {Icon} from "../../Icon/Icon";
 import {StarsRating} from "../../Rating/StarsRating";
 
+
 export const CardItem = ({data}) => {
     console.log(Array.isArray(data));
     const isArray = Array.isArray(data);

@@ -1,7 +1,11 @@
+import styles from './Icon.module.scss';
+import {forwardRef, useState} from 'react';
+import cs from 'classnames';
 import {ReactComponent as Like} from '../../../assets/icons/like.svg';
 import {ReactComponent as Compare} from '../../../assets/icons/compare.svg';
 import {ReactComponent as User} from '../../../assets/icons/user.svg';
 import {ReactComponent as Cart} from '../../../assets/icons/cart.svg';
+import {ReactComponent as Instagram} from '../../../assets/icons/instagram.svg';
 import {ReactComponent as ArrowRight} from '../../../assets/icons/arrow-right.svg';
 import {ReactComponent as Map} from '../../../assets/icons/map-pin.svg';
 import {ReactComponent as Office} from '../../../assets/icons/office.svg';
@@ -15,16 +19,14 @@ import {ReactComponent as Slash} from '../../../assets/icons/slash.svg';
 import {ReactComponent as ThumbUp} from '../../../assets/icons/thumbs-up.svg';
 import {ReactComponent as StarReview} from '../../../assets/icons/star-review.svg';
 
-import styles from './Icon.module.scss';
-import {forwardRef, useState} from 'react';
-import cs from 'classnames';
-
 export const Icon = forwardRef(({type, size = 'middle', onClick, className}, ref) => {
+
     const types = {
         like: <Like/>,
         compare: <Compare/>,
         user: <User/>,
         cart: <Cart/>,
+        instagram: <Instagram/>,
         ['arrow-right']: <ArrowRight/>,
         map: <Map/>,
         office: <Office/>,
