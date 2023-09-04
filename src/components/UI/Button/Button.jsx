@@ -12,6 +12,7 @@ export const Button = ({
                            onClick,
                            className,
                            clickedText,
+                           isClickAllowed = true,
                            ...props
                        }) => {
     const [isClicked, setIsClicked] = useState(false);
@@ -22,19 +23,21 @@ export const Button = ({
         }
     };
 
+    const allowChangeText = isClicked && clickedText && isClickAllowed;
+
     const defaultStyles = cs(
         styles.button,
         // styles[`button_${textSize}`],
         styles[`button_${variant}`],
-        {[styles['button-clicked']]: isClicked && clickedText}
+        {[styles['button-clicked']]: allowChangeText}
     );
 
     const buttonStyles = className ? cs(defaultStyles, className) : defaultStyles;
 
     return (
-        <button onClick={handleClick} className={buttonStyles}>
+        <button onClick={handleClick} className={buttonStyles} {...props}>
             {icon}
-            {clickedText ? (isClicked ? clickedText : children) : children}
+            {allowChangeText ? clickedText : children}
         </button>
     );
 };

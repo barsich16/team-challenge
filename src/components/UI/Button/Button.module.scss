@@ -11,6 +11,8 @@
   padding: 8px 16px;
   border: 1px solid var(--light-gray);
   height: 42px;
+  gap: 10px;
+  transition: background-color .4s ease-in, color .4s ease-in;
 
   svg {
     width: 21px;
@@ -18,6 +20,7 @@
     margin-right: 10px;
 
     * {
+      transition: fill .4s ease-in;
       fill: var(--white);
     }
   }

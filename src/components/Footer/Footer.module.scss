@@ -39,10 +39,11 @@
     .socials {
       display: flex;
       margin-top: 20px;
-      height: 24px;
+      gap: 20px;
+      //height: 24px;
 
       svg {
-        margin-right: 20px;
+        //margin-right: 20px;
       }
     }
   }
@@ -117,7 +118,8 @@
     }
 
     &_button {
-      //styles if needed
+      width: 100%;
+      border: none;
     }
   }
 }

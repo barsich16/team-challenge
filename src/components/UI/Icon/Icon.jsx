@@ -6,6 +6,8 @@ import {ReactComponent as Compare} from '../../../assets/icons/compare.svg';
 import {ReactComponent as User} from '../../../assets/icons/user.svg';
 import {ReactComponent as Cart} from '../../../assets/icons/cart.svg';
 import {ReactComponent as Instagram} from '../../../assets/icons/instagram.svg';
+import {ReactComponent as Twitter} from '../../../assets/icons/twitter.svg';
+import {ReactComponent as Facebook} from '../../../assets/icons/facebook.svg';
 import {ReactComponent as ArrowRight} from '../../../assets/icons/arrow-right.svg';
 import {ReactComponent as Map} from '../../../assets/icons/map-pin.svg';
 import {ReactComponent as Office} from '../../../assets/icons/office.svg';
@@ -18,6 +20,7 @@ import {ReactComponent as Minus} from '../../../assets/icons/minus.svg';
 import {ReactComponent as Slash} from '../../../assets/icons/slash.svg';
 import {ReactComponent as ThumbUp} from '../../../assets/icons/thumbs-up.svg';
 import {ReactComponent as StarReview} from '../../../assets/icons/star-review.svg';
+import {ReactComponent as Email} from '../../../assets/icons/email.svg';
 
 export const Icon = forwardRef(({type, size = 'middle', onClick, className}, ref) => {
 
@@ -27,6 +30,9 @@ export const Icon = forwardRef(({type, size = 'middle', onClick, className}, ref
         user: <User/>,
         cart: <Cart/>,
         instagram: <Instagram/>,
+        twitter: <Twitter/>,
+        facebook: <Facebook/>,
+        email: <Email/>,
         ['arrow-right']: <ArrowRight/>,
         map: <Map/>,
         office: <Office/>,
