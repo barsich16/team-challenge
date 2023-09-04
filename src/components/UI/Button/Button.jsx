@@ -1,6 +1,6 @@
 import styles from './Button.module.scss';
 import cs from 'classnames';
-import {useState} from "react";
+import {useState} from 'react';
 
 //variant: text, contained, outlined
 
@@ -32,6 +32,7 @@ export const Button = ({
         {[styles['button-clicked']]: allowChangeText}
     );
 
+
     const buttonStyles = className ? cs(defaultStyles, className) : defaultStyles;
 
     return (
@@ -40,4 +41,5 @@ export const Button = ({
             {allowChangeText ? clickedText : children}
         </button>
     );
+
 };

@@ -23,17 +23,7 @@
     gap: 10px;
 
     &_btn {
-      background-color: var(--lightest-gray);
-      color: var(--black);
-      padding: 8px 16px;
       font-size: 18px;
-      font-weight: 500;
-      line-height: 22px;
-      border: 1px solid var(--lightest-gray);
-
-      &_active {
-        border: 1px solid var(--bright-purple);
-      }
     }
 
   }

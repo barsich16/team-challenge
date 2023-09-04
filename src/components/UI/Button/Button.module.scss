@@ -4,7 +4,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--white);
   font-size: 16px;
   font-weight: 600;
   line-height: 24px; /* 150% */
@@ -13,6 +12,7 @@
   height: 42px;
   gap: 10px;
   transition: background-color .4s ease-in, color .4s ease-in;
+
 
   svg {
     width: 21px;
@@ -29,6 +29,7 @@
     min-width: 194px;
     height: 48px;
     padding: 12px 24px;
+    color: var(--white);
     background-color: var(--bright-purple);
   }
 
@@ -63,6 +64,17 @@
     font-size: 18px;
     font-weight: 500;
     line-height: 26px;
+  }
+
+  &_filter {
+    color: var(--black);
+    font-weight: 500;
+
+    &.active {
+      background-color: var(--light-gray);
+      color: var(--bright-purple);
+      border: 1px solid var(--light-gray);
+    }
   }
 
   &-clicked {
