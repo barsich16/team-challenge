@@ -1,8 +1,9 @@
 import styles from "./SearchInput.module.scss";
 import {useDebounce} from "../../../../hooks/useDebounce";
 import {useEffect, useState} from "react";
+import cs from "classnames";
 
-export const SearchInput = ({setResults}) => {
+export const SearchInput = ({setResults, className}) => {
     const [searchTerm, setSearchTerm] = useState('');
 
     const debouncedSearchTerm = useDebounce(searchTerm, 500);
@@ -30,7 +31,7 @@ export const SearchInput = ({setResults}) => {
     return <input
         type="text"
         placeholder="Search.."
-        className={styles.input}
+        className={cs(styles.input, className)}
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
     />;

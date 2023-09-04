@@ -9,12 +9,12 @@ const transitionClasses = {
     exitActive: styles.exitActive,
 };
 
-export const ToolTip = ({children, text, customClass}) => {
+export const ToolTip = ({children, position = 'top', text, customClass}) => {
     const refSetTimeout = useRef();
     const [showToolTip, setShowToolTip] = useState(false);
     const toolTipClasses = customClass
-        ? `${styles.tooltip} ${customClass}`
-        : `${styles.tooltip}`;
+        ? `${styles.tooltip} ${styles[`tooltip_${position}`]} ${customClass}`
+        : `${styles.tooltip} ${styles[`tooltip_${position}`]}`;
 
     const onMouseEnterHandler = () => {
         refSetTimeout.current = setTimeout(() => {
