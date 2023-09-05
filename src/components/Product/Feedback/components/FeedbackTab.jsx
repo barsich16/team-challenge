@@ -6,6 +6,7 @@ import cs from 'classnames';
 import review_img from '../../../../assets/temp/review_img.jpg';
 import {ShortProductInfo} from './ShortProductInfo';
 import {ReviewList} from './ReviewList';
+import {Button} from "../../../UI/Button/Button";
 
 const imagesArray = [
     review_img,
@@ -40,14 +41,13 @@ function ReviewImages() {
         <div className={styles.images}>
             <div className={styles.images_title}>
                 <h5>Reviews with images </h5>
-                <Icon
+                <Button
                     onClick={() => setShowSingleRow((prev) => !prev)}
                     size='small'
-                    className={cs(styles.show_img, {
-                        [styles.show_img_active]: !showSingleRow,
-                    })}
-                    type={'arrow-right'}
-                />
+                    variant='outlined'
+                    icon={<Icon type='picture--more' size='small'/>}
+                    clickedText='Hide All'
+                >Show All</Button>
             </div>
             {/*Feedback Image Block */}
             <div className={styles.images_gallery}>

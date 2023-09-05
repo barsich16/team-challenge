@@ -1,13 +1,17 @@
 .button {
-  //padding: 7px;   зробити всі картинки квадратними 36 на 36
   background-color: var(--white);
   border-radius: 8px;
-  transition: ease .2s;
+  transition: all ease .2s;
   width: 36px;
   height: 36px;
 
-  &:hover svg {
-    opacity: 0.85;
+  &_hover:hover svg {
+    opacity: 0.8;
+  }
+
+  svg {
+    opacity: 0.99;
+    transition: all ease .2s;
   }
 
   &:disabled svg * {

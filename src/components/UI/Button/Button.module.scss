@@ -11,16 +11,16 @@
   border: 1px solid var(--light-gray);
   height: 42px;
   gap: 10px;
-  transition: background-color .4s ease-in, color .4s ease-in;
+  transition: all .2s ease-in;
 
 
   svg {
     width: 21px;
     height: 21px;
-    margin-right: 10px;
+    //margin-right: 10px;
 
     * {
-      transition: fill .4s ease-in;
+      transition: fill .3s ease-in;
       fill: var(--white);
     }
   }
@@ -31,6 +31,10 @@
     padding: 12px 24px;
     color: var(--white);
     background-color: var(--bright-purple);
+
+    &:hover {
+      background-color: var(--dark-purple);
+    }
   }
 
   &_outlined {
@@ -41,14 +45,17 @@
     height: 48px;
     padding: 12px 24px;
 
-    svg {
-      width: 21px;
-      height: 21px;
-      margin-right: 10px;
+    &:hover {
+      border: 2px solid var(--dark-purple);
+      color: var(--dark-purple);
 
-      * {
-        fill: var(--bright-purple);
+      svg * {
+        fill: var(--dark-purple);
       }
+    }
+
+    svg * {
+      fill: var(--bright-purple);
     }
   }
 
@@ -78,8 +85,8 @@
   }
 
   &-clicked {
-    background-color: var(--light-gray);
-    color: var(--bright-purple);
+    background-color: var(--light-gray) !important;
+    color: var(--bright-purple) !important;
 
     svg * {
       fill: var(--bright-purple);

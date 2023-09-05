@@ -10,9 +10,9 @@ export const Price = ({size = 'small', actual, old, discountPercent}) => {
 
     return (
         <div className={defaultStyles}>
-            <div className={styles.price_old}>{old}</div>
+            <div className={styles.price_old}>{old.toLocaleString()}</div>
             <div className={styles.price_value}>
-                <span className={styles.price_actual}>{actual}</span>
+                <span className={styles.price_actual}>{actual.toLocaleString()}</span>
                 <div className={styles.price_discount}
                     // data-tooltip-id="price-tooltip"
                     // data-tooltip-content='Promo offer'

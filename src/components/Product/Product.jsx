@@ -9,6 +9,7 @@ import {Feedback} from './Feedback/Feedback';
 import {Specifications} from "./Specifications/Specifications";
 import {CardRow} from "../UI/blocks/CardRow/CardRow";
 import {Accessories} from "./Accessories/Accessories";
+import {StarsRating} from "../UI/Rating/StarsRating";
 
 
 export const Product = () => {
@@ -30,27 +31,16 @@ export const Product = () => {
     };
     return (
         <div className={cs('wrapper', styles.main)}>
-            {/*<div className='wrapper'>*/}
             <Breadcrumbs/>
             <div className={styles.name_rating}>
                 <h1 className={styles.title}>
                     Apple iPhone 14 Pro Max 512GB Deep Purple (MQ9X3)
                 </h1>
                 <div className={styles.stars}>
-                    {new Array(5).fill().map((_, index) => (
-                        <Star
-                            key={index}
-                            className={cs({
-                                [styles.star_disabled]: product.rating <= index,
-                            })}
-                            width={32}
-                            height={32}
-                        />
-                    ))}
+                    <StarsRating size={32} initialValue={4.2} readonly/>
                     <span className={styles.stars_count}>(312)</span>
                 </div>
             </div>
-            {/*</div>*/}
 
             <Tabs tabsArray={productTabsArray} activeTab={activeTab} setActiveTab={setActiveTab}
                   className={styles.wrapper}/>

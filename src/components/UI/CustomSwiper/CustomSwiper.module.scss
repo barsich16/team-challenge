@@ -1,0 +1,25 @@
+.swiper {
+  position: relative;
+}
+
+.arrow_prev, .arrow_next {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  border-radius: 8px;
+  background: white;
+
+  //&:disabled {
+  //  display: none;
+  //}
+}
+
+.arrow_prev {
+  left: 0;
+  transform: translateY(-50%) rotate(-180deg);
+}
+
+.arrow_next {
+  right: 0;
+  transform: translateY(-50%);
+}

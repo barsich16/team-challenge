@@ -2,16 +2,16 @@ import styles from './Button.module.scss';
 import cs from 'classnames';
 import {useState} from 'react';
 
-//variant: text, contained, outlined
+//variant: filter, contained, outlined
 
 export const Button = ({
-                           // textSize = 'small',
                            icon,
                            variant = 'contained',
                            children,
                            onClick,
                            className,
                            clickedText,
+                           clickedIcon,
                            isClickAllowed = true,
                            ...props
                        }) => {
@@ -24,22 +24,19 @@ export const Button = ({
     };
 
     const allowChangeText = isClicked && clickedText && isClickAllowed;
+    const allowChangeIcon = isClicked && clickedIcon && isClickAllowed;
 
-    const defaultStyles = cs(
+    const buttonStyles = cs(
         styles.button,
-        // styles[`button_${textSize}`],
         styles[`button_${variant}`],
-        {[styles['button-clicked']]: allowChangeText}
+        {[styles['button-clicked']]: allowChangeText},
+        className
     );
-
-
-    const buttonStyles = className ? cs(defaultStyles, className) : defaultStyles;
 
     return (
         <button onClick={handleClick} className={buttonStyles} {...props}>
-            {icon}
+            {allowChangeIcon ? clickedIcon : icon}
             {allowChangeText ? clickedText : children}
         </button>
     );
-
 };

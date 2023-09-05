@@ -59,6 +59,7 @@
     .images {
       &_title {
         display: flex;
+        justify-content: space-between;
         align-items: center;
       }
 
@@ -68,15 +69,6 @@
         font-weight: 500;
         line-height: 32px;
         margin-right: 8px;
-      }
-
-      .show_img {
-        transform: rotate(90deg);
-        transition: transform .3s ease;
-
-        &_active {
-          transform: rotate(-90deg);
-        }
       }
 
       &_gallery {
@@ -97,7 +89,8 @@
 
     .sticky {
       position: sticky;
-      top: 10px;
+      top: 80px;
+      //z-index: 1;
     }
 
     &_card {

@@ -284,17 +284,11 @@
 }
 
 .swiper {
-  position: relative;
   padding: 0 20px;
 
   .arrow_prev, .arrow_next {
     height: 100%;
     max-width: 24px;
-    position: absolute;
-    top: 50%;
-    z-index: 10;
-    border-radius: 8px;
-    background: white;
 
     &:disabled {
       display: none;
@@ -303,14 +297,13 @@
 
   .arrow_prev {
     left: -7px;
-    transform: translateY(-50%) rotate(-180deg);
   }
 
   .arrow_next {
     right: -8px;
-    transform: translateY(-50%);
   }
 }
+
 
 
 

@@ -53,10 +53,10 @@ export const CardItem = ({data}) => {
 
                     <div className={styles.buy}>
                         <div className={styles.price}>
-                            <div className={styles.price_value}>{price}</div>
+                            <div className={styles.price_value}>{price.toLocaleString()}</div>
                             {oldPrice && (
                                 <>
-                                    <div className={styles.price_old}>{oldPrice}</div>
+                                    <div className={styles.price_old}>{oldPrice.toLocaleString()}</div>
                                     <div className={styles.price_discount}>
                                         <ToolTip text={'Promotional offer'}>
                                             <div className={styles.price_discount_value}>-{discount}%</div>

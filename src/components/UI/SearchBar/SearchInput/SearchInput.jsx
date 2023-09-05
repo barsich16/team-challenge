@@ -3,7 +3,7 @@ import {useDebounce} from "../../../../hooks/useDebounce";
 import {useEffect, useState} from "react";
 import cs from "classnames";
 
-export const SearchInput = ({setResults, className}) => {
+export const SearchInput = ({setResults, className, openResults}) => {
     const [searchTerm, setSearchTerm] = useState('');
 
     const debouncedSearchTerm = useDebounce(searchTerm, 500);
@@ -13,6 +13,7 @@ export const SearchInput = ({setResults, className}) => {
 
         async function fetchData() {
             // setLoading(true);
+            console.log("Fetch data");
 
             setResults([]);
 
@@ -24,7 +25,12 @@ export const SearchInput = ({setResults, className}) => {
             // setLoading(false);
         }
 
-        if (debouncedSearchTerm) fetchData();
+        console.log(debouncedSearchTerm);
+        if (debouncedSearchTerm) {
+            fetchData()
+        } else {
+            setResults([]);
+        }
     }, [debouncedSearchTerm]);
 
 
@@ -34,5 +40,6 @@ export const SearchInput = ({setResults, className}) => {
         className={cs(styles.input, className)}
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
+        onClick={openResults}
     />;
 };

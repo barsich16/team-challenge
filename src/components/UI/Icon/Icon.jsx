@@ -21,14 +21,17 @@ import {ReactComponent as Slash} from '../../../assets/icons/slash.svg';
 import {ReactComponent as ThumbUp} from '../../../assets/icons/thumbs-up.svg';
 import {ReactComponent as StarReview} from '../../../assets/icons/star-review.svg';
 import {ReactComponent as Email} from '../../../assets/icons/email.svg';
+import {ReactComponent as CartAdded} from '../../../assets/icons/cart-added.svg';
+import {ReactComponent as PictureMore} from '../../../assets/icons/picture--more.svg';
 
-export const Icon = forwardRef(({type, size = 'middle', onClick, className}, ref) => {
+export const Icon = forwardRef(({type, size = 'middle', onClick, className, hover = true}, ref) => {
 
     const types = {
         like: <Like/>,
         compare: <Compare/>,
         user: <User/>,
         cart: <Cart/>,
+        ['cart--added']: <CartAdded/>,
         instagram: <Instagram/>,
         twitter: <Twitter/>,
         facebook: <Facebook/>,
@@ -44,7 +47,9 @@ export const Icon = forwardRef(({type, size = 'middle', onClick, className}, ref
         minus: <Minus/>,
         slash: <Slash/>,
         ['thumb-up']: <ThumbUp/>,
-        ['star-review']: <StarReview/>
+        ['star-review']: <StarReview/>,
+        ['picture--more']: <PictureMore/>,
+
     };
 
     const [isClicked, setIsClicked] = useState(false);
@@ -59,6 +64,7 @@ export const Icon = forwardRef(({type, size = 'middle', onClick, className}, ref
 
     const defaultStyles = cs(styles.button, styles[`button_${size}`], {
         [styles[`button_${type}`]]: isClicked,
+        [styles[`button_hover`]]: hover,
     });
 
     const buttonStyles = className ? cs(className, defaultStyles) : defaultStyles;
