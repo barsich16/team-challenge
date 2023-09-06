@@ -226,10 +226,27 @@
     .cart {
       gap: 12px;
     }
+  }
 
-    //.button {
-    //  width: 194px;
-    //}
+  .swiper {
+    padding: 0 20px;
+
+    .arrow_prev, .arrow_next {
+      height: 100%;
+      max-width: 24px;
+
+      &:disabled {
+        display: none;
+      }
+    }
+
+    .arrow_prev {
+      left: -7px;
+    }
+
+    .arrow_next {
+      right: -8px;
+    }
   }
 }
 
@@ -280,27 +297,6 @@
     svg * {
       fill: var(--bright-purple);
     }
-  }
-}
-
-.swiper {
-  padding: 0 20px;
-
-  .arrow_prev, .arrow_next {
-    height: 100%;
-    max-width: 24px;
-
-    &:disabled {
-      display: none;
-    }
-  }
-
-  .arrow_prev {
-    left: -7px;
-  }
-
-  .arrow_next {
-    right: -8px;
   }
 }
 

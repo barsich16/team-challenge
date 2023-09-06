@@ -13,7 +13,7 @@ export const General = React.memo(({changeTab}) => {
         <div className={styles.general}>
             <Overview/>
             <PresentationsIphone/>
-            <SpecificationsMain data={data}/>
+            <SpecificationsMain data={data} changeTab={changeTab}/>
             <h1 className={styles.title}>
                 Apple iPhone 14 Pro Max 512GB Deep Purple (MQ9X3)
             </h1>

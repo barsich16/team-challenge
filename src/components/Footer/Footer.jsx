@@ -11,6 +11,7 @@ export const Footer = () => {
     const onSubmit = (data) => {
         alert(JSON.stringify(data));
         setIsSubscribed(true);
+        setTimeout(() => setIsSubscribed(false), 5000);
     };
     const subscribeHandler = (data) => {
         console.log(data);

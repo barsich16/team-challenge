@@ -5,7 +5,7 @@ import {ReactComponent as ReadMore} from '../../../../assets/icons/readMore.svg'
 import {Button} from '../../../UI/Button/Button';
 import {Tooltip} from "react-tooltip";
 
-export const SpecificationsMain = ({data, type}) => {
+export const SpecificationsMain = ({data, type, changeTab}) => {
     return (
         <div className={type === 'short' ? css.tableShort : css.table}>
             <h2 className={type === 'short' ? css.table_titleShort : css.table_title}>
@@ -34,18 +34,13 @@ export const SpecificationsMain = ({data, type}) => {
                                 </div>
                                 <Tooltip className={css.tooltip} place='left' id="main-specification"/>
                             </>
-
-                            // <ToolTip text={'Example text'}>
-                            //     <HelpCircle/>
-                            // </ToolTip>
                         )}
                     </li>
                 ))}
             </ul>
             <Button
                 variant='outlined'
-
-                // onClick={}
+                onClick={() => changeTab(1)}
                 className={css.readMore}
                 icon={<ReadMore fill='var(--bright-purple)'/>}
             >

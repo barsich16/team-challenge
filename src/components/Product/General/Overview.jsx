@@ -235,6 +235,7 @@ export const CreditBlock = ({bankCounts = 4, className}) => {
                 className={styles.credit_btn}
                 variant='outlined'
                 icon={<Credit/>}
+                onClick={() => alert('Navigation to Cart with tab Credit')}
             >
                 Buy on Credit
             </Button>
