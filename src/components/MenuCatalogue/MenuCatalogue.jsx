@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef} from 'react';
 import styles from './MenuCatalogue.module.scss';
 import iconRight from '../../assets/icons/arrow-right.svg';
 import iconPhone from '../../assets/icons/phone.svg';
@@ -12,6 +12,7 @@ import iconWashing from '../../assets/icons/washing machine.svg';
 import iconPercentage from '../../assets/icons/percentage.svg';
 import { Icon } from '../UI/Icon/Icon';
 import cs from 'classnames';
+import { CatalogueGoods } from '../CatalogueGoods/CatalogueGoods';
 
 const MENU_CATEGORIES = [
 	{
@@ -216,7 +217,7 @@ const MENU_CATEGORIES = [
 		],
 	},
 	{
-		icon: 'charge',
+		// icon: 'charge',
 		title: 'Accessories',
 		right: iconRight,
 	},
@@ -247,59 +248,64 @@ const MENU_CATEGORIES = [
 	},
 ];
 
-export const MenuCatalogue = ({ isOpen }) => {
+export const MenuCatalogue = ({isOpenCatalog}) => {
 	const [activeItem, setActiveItem] = useState({});
+  const categoriesRef = useRef(null);
+  const heightItem = useRef
+
+  const paddingTopBotInCategorie = 40;
+  const sizeCategorie = 40;
 
 	return (
-		<div className={`${styles.menu}`}>
-			<ul className={`${styles.menu__categories}`}>
+		<div 
+      className={styles.menu}
+      style={{height: MENU_CATEGORIES.length * sizeCategorie + paddingTopBotInCategorie}}
+      ref={categoriesRef}
+			onMouseLeave={() => {
+        setActiveItem({})
+        isOpenCatalog(false)
+      }}
+    >
+			<ul className={styles.menu__categories}>
 				{MENU_CATEGORIES.map((categore) => (
+ 
 					<li
 						id={categore.title}
-						// 		className={`
-						//   ${styles.menu__categories__li}
-						//   ${!categore.goods && styles.menu__disable}
-						//   ${activeItem.title === categore.title && styles.menu__active}
-						// `}
 						className={cs(styles.menu__categories__li, {
 							[styles['menu__disable']]: !categore.goods,
 							[styles['menu__active']]: activeItem.title === categore.title,
 						})}
 						onMouseEnter={() => setActiveItem(categore)}
-						onMouseLeave={() => setActiveItem({})}
 					>
 						<Icon
 							type={categore.icon || 'shield'}
 							size='small'
 							className={styles.menu__categories__icon}
 						/>
-						<div className={`${styles.text__categories}`}>{categore.title}</div>
+						<div className={styles.text__categories}>{categore.title}</div>
 						<Icon
 							type='arrow-right'
 							size='small'
-							className={styles.menu__categories__icon}
+							className={`${styles.menu__categories__icon}`}
 						/>
 					</li>
 				))}
 			</ul>
-
-			{activeItem && activeItem.goods && (
-				<div className={`${styles.wrapper_goods}`}>
-					{activeItem.goods.map((goods) => (
-						<div id={goods.brand}>
-							<div className={`${styles.text__goods_title}`}>{goods.brand}</div>
-							<ul className='menu__goods__item'>
-								{goods.model.map((item) => (
-									<li id={item} className={`${styles.text__goods_item}`}>
-										{item}
-									</li>
-								))}
-							</ul>
-							<button className={styles.show_all}>Show All</button>
-						</div>
-					))}
-				</div>
-			)}
+      
+			{activeItem 
+        && 
+        activeItem.goods 
+        && 
+        <CatalogueGoods 
+          menuHight={
+            categoriesRef?.current
+              ? categoriesRef.current.getBoundingClientRect().height
+              : 0
+          }
+          activeItem={activeItem}
+          paddingCategorie={paddingTopBotInCategorie}
+        />
+      }
 		</div>
 	);
 };

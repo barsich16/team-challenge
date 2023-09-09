@@ -23,6 +23,7 @@ export const Header = () => {
 
     const onOpenMenuCatalogue = () => {
       setIsMenuOpen(!isMenuOpen)
+      
     }
 
     return (
@@ -43,7 +44,7 @@ export const Header = () => {
                           Catalogue
                         </Button>
 
-                        {isMenuOpen && <MenuCatalogue isOpen={isMenuOpen}/>}
+                        {isMenuOpen && <MenuCatalogue isOpenCatalog={setIsMenuOpen}/>}
 
                         <SearchBar/>
                         <LanguageSwitcher/>
