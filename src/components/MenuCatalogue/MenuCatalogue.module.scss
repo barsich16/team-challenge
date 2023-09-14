@@ -23,7 +23,7 @@
       }
     }
 
-    &__li:hover svg * {
+    &__li:hover path {
       color: var(--bright-purple);
       fill: var(--bright-purple);
     }
@@ -36,13 +36,18 @@
   }
 
   &__active {
+    path {
     fill: var(--bright-purple);
+      
+    }
     color: var(--bright-purple);
   }
 
   &__disable {
+    path {
+      fill: gray;
+    }
     color: grey;
-    fill: grey;
     pointer-events: none;
   }
 }

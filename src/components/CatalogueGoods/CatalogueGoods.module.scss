@@ -48,6 +48,10 @@
   }
 
   &:hover {
+    color: var(--middle-purple);
+  }
+
+  &:active {
     color: var(--dark-purple);
   }
 }
